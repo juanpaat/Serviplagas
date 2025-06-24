@@ -4,6 +4,7 @@ import seaborn as sns
 import math
 
 
+
 from io import BytesIO
 
 def generate_order_area_plot(df: pd.DataFrame) -> None:
@@ -271,66 +272,3 @@ def generate_total_plagas_trend_plot(df: pd.DataFrame) -> None:
     plt.show()
 
 
-
-def generate_roedores_station_status_plot(df: pd.DataFrame) -> None:
-    """
-    Generate a faceted bar/line/point chart showing the evolution of rodent station statuses over time.
-
-    Parameters:
-    ----------
-    df : pd.DataFrame
-        The 'roedores' DataFrame containing monthly station status counts and a 'Mes' column.
-
-    Returns:
-    -------
-    None
-    """
-
-    # Group and summarize status metrics by month
-    grouped = df.groupby('Mes').agg({
-        'Consumido': 'sum',
-        'Instalación': 'sum',
-        'Sin novedad': 'sum',
-        'Presencia de roedores': 'sum',
-        'Presencia de bioindicador': 'sum',
-        'Cambio de cebo por deterioro': 'sum',
-        'Desaparecida': 'sum',
-        'Estación dañada': 'sum',
-        'Estación bloqueada': 'sum'
-    }).reset_index()
-
-    # Melt into long format
-    long_df = grouped.melt(id_vars='Mes', var_name='Estado', value_name='Cantidad')
-
-    # Sort months if in "Mon YYYY" format
-    try:
-        long_df['Mes'] = pd.Categorical(
-            long_df['Mes'],
-            categories=sorted(grouped['Mes'], key=lambda x: pd.to_datetime(x, format='%b %Y')),
-            ordered=True
-        )
-    except Exception as e:
-        print(f"[Warning] Could not parse and sort 'Mes': {e}")
-
-    # Faceted plot
-    g = sns.FacetGrid(long_df, col='Estado', col_wrap=3, sharey=False, height=3.5)
-    g.map_dataframe(sns.barplot, x='Mes', y='Cantidad', alpha=0.1, color='steelblue', edgecolor='black')
-    g.map_dataframe(sns.lineplot, x='Mes', y='Cantidad', marker='o', color='black')
-
-    # Format each subplot
-    for ax in g.axes.flatten():
-        ax.set_xticklabels(ax.get_xticklabels(), rotation=45, fontsize=6)
-        y_min, y_max = ax.get_ylim()
-        y_max = math.ceil(y_max)
-        y_min = math.floor(y_min)
-        step = max(1, math.ceil((y_max - y_min) / 5))
-        ax.set_yticks(range(y_min, y_max + 1, step))
-        ax.set_ylim(bottom=0)
-
-    g.set_titles("{col_name}")
-    g.set_axis_labels("", "Estado de la estación")
-    g.fig.suptitle("Estado de la estación en el tiempo", fontsize=14)
-    g.fig.subplots_adjust(top=0.92)
-
-    plt.tight_layout()
-    plt.show()
