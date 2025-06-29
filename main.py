@@ -34,3 +34,17 @@ if __name__ == "__main__":
     lamparas = pd.read_csv("data/lamparas_raw.csv")
     transformed = transform_lamparas_df(lamparas)
     transformed.to_csv("data/lamparas_transformed.csv", index=False)
+
+
+
+
+
+
+# main.py
+
+import pandas as pd
+from visualisations.lamparas import plot_estado_lamparas_por_lampara
+
+if __name__ == "__main__":
+    lamparas = pd.read_csv("data/lamparas_transformed.csv")
+    plot_estado_lamparas_por_lampara(lamparas)

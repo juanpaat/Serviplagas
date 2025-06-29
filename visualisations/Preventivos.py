@@ -272,3 +272,10 @@ def generate_total_plagas_trend_plot(df: pd.DataFrame) -> None:
     plt.show()
 
 
+
+
+
+
+
+
+
