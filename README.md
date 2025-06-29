@@ -10,3 +10,9 @@ Generates automated Word reports with data plots, statistical summaries, and LLM
 
 ```bash
 python main.py
+```
+
+
+
+Version= 
+Python 3.11.0
