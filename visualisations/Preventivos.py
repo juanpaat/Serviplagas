@@ -51,40 +51,43 @@ def generate_order_area_plot(df: pd.DataFrame) -> None:
     except Exception as e:
         print(f"[Warning] Could not parse and sort 'Mes': {e}")
 
-    # Plotting
-    plt.figure(figsize=(12, 6))
+    # Crear figura y eje
+    fig, ax = plt.subplots(figsize=(12, 6))
     sns.set_style("whitegrid")
-    bar_plot = sns.barplot(data=summary_long,
-                           x='Mes',
-                           y='Valor',
-                           hue='Variable',
-                           palette=['#333333', '#8C8C8C', '#D3D3D3'],  # Replaces gray20, gray55, lightgray
-                           edgecolor='black'
-                           )
-    # Add labels to bars
+
+    # Graficar
+    bar_plot = sns.barplot(
+        data=summary_long,
+        x='Mes',
+        y='Valor',
+        hue='Variable',
+        palette=['#333333', '#8C8C8C', '#D3D3D3'],
+        edgecolor='black',
+        ax=ax  # <- usar eje explícito
+    )
+
     for p in bar_plot.patches:
         height = p.get_height()
         if height > 0:
-            bar_plot.annotate(
+            ax.annotate(
                 f'{int(height)}',
                 (p.get_x() + p.get_width() / 2., height),
                 ha='center', va='bottom',
                 fontsize=9, color='black'
             )
 
-    # Format plot
-    plt.title("Cantidad de órdenes vs Cantidad de áreas", fontsize=14, weight='bold')
-    plt.xlabel("")
-    plt.ylabel("Cantidad")
-    plt.legend(
+    ax.set_title("Cantidad de órdenes vs Cantidad de áreas", fontsize=14, weight='bold')
+    ax.set_xlabel("")
+    ax.set_ylabel("Cantidad")
+    ax.legend(
         title="",
         loc='center left',
         bbox_to_anchor=(1.0, 0.5),
         frameon=False
     )
-    plt.tight_layout()
-    plt.show()
 
+    fig.tight_layout()
+    return fig
 
 
 
@@ -175,7 +178,7 @@ def generate_plagas_timeseries_facet(df: pd.DataFrame) -> None:
     g.fig.subplots_adjust(top=0.92)  # Leave space for the title
 
     plt.tight_layout()
-    plt.show()
+    return g.fig
 
 
 def generate_total_plagas_trend_plot(df: pd.DataFrame) -> None:
@@ -220,12 +223,10 @@ def generate_total_plagas_trend_plot(df: pd.DataFrame) -> None:
     except Exception as e:
         print(f"[Warning] Could not parse and sort 'Mes': {e}")
 
-    # Plotting
-    plt.figure(figsize=(12, 6))
+    # Crear figura y eje
+    fig, ax = plt.subplots(figsize=(12, 6))
     sns.set_style("whitegrid")
 
-    # Create the plot
-    ax = plt.gca()
 
     # Bars
     bars = sns.barplot(data=trend_df, x='Mes', y='total', alpha=0.1, color='steelblue',
@@ -235,41 +236,34 @@ def generate_total_plagas_trend_plot(df: pd.DataFrame) -> None:
     sns.lineplot(data=trend_df, x='Mes', y='total', color='black', marker='o',
                  markersize=8, linewidth=2, ax=ax)
 
-    # Labels on points - using the actual x positions from the plot
+    # Etiquetas de valores
     for i, (idx, row) in enumerate(trend_df.iterrows()):
-        # Get the actual x position from the bar plot
         x_pos = bars.patches[i].get_x() + bars.patches[i].get_width() / 2
         y_pos = row['total']
+        ax.text(x_pos, y_pos + max(trend_df['total']) * 0.02,
+                str(int(row['total'])),
+                ha='center', va='bottom',
+                fontsize=9, weight='bold',
+                bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.8, edgecolor='none'))
 
-        # Add label with background for better readability
-        plt.text(x_pos, y_pos + max(trend_df['total']) * 0.02,
-                 str(int(row['total'])),
-                 ha='center', va='bottom',
-                 fontsize=9, weight='bold',
-                 bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.8, edgecolor='none'))
-
-    # Formatting
-    plt.title("Tendencia de eliminación mensual de plagas", fontsize=14, weight='bold', pad=20)
-    plt.ylabel("Total de plagas eliminadas", fontsize=12)
-    plt.xlabel("")
-
-    # Improve x-axis labels
-    plt.xticks(rotation=45, ha='right', fontsize=10)
-
-    # Add grid for better readability
+    # Formato del gráfico
+    ax.set_title("Tendencia de eliminación mensual de plagas", fontsize=14, weight='bold', pad=20)
+    ax.set_ylabel("Total de plagas eliminadas", fontsize=12)
+    ax.set_xlabel("")
+    plt.setp(ax.get_xticklabels(), rotation=45, ha='right', fontsize=10)
     ax.grid(True, axis='y', alpha=0.3, linestyle='-', linewidth=0.5)
     ax.set_axisbelow(True)
 
-    # Adjust y-axis to give space for labels
+    # Eje Y dinámico
     y_max = trend_df['total'].max()
     ax.set_ylim(0, y_max * 1.1)
 
-    # Format y-axis with thousand separators if values are large
     if y_max > 1000:
-        ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{int(x):,}'))
+        from matplotlib.ticker import FuncFormatter
+        ax.yaxis.set_major_formatter(FuncFormatter(lambda x, p: f'{int(x):,}'))
 
-    plt.tight_layout()
-    plt.show()
+    fig.tight_layout()
+    return fig
 
 
 
