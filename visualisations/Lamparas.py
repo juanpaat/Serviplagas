@@ -8,7 +8,7 @@ from datetime import datetime
 
 
 
-def plot_estado_lamparas_por_mes(df: pd.DataFrame) -> None:
+def plot_estado_lamparas_por_mes(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Generate a faceted bar/line/point chart showing monthly lamp condition trends.
 
@@ -75,13 +75,13 @@ def plot_estado_lamparas_por_mes(df: pd.DataFrame) -> None:
     g.fig.subplots_adjust(top=0.92)
 
     plt.tight_layout()
-    plt.show()
+    return grouped, g.fig
 
 
 
 
 
-def plot_estado_lamparas_con_leyenda(df: pd.DataFrame, save_path: str = None) -> None:
+def plot_estado_lamparas_con_leyenda(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Alternative version with a legend showing status categories and their meanings.
 
@@ -291,22 +291,13 @@ def plot_estado_lamparas_con_leyenda(df: pd.DataFrame, save_path: str = None) ->
     plt.tight_layout()
     plt.subplots_adjust(top=0.92, bottom=0.08)
 
-    # Save or show the plot
-    if save_path:
-        try:
-            plt.savefig(save_path, dpi=300, bbox_inches='tight',
-                        facecolor='white', edgecolor='none')
-            print(f"Plot saved to: {save_path}")
-        except Exception as e:
-            print(f"[Error] Failed to save plot: {e}")
-
-    plt.show()
+    return grouped, fig
 
 
 
 
 
-def plot_capturas_especies_por_mes(df: pd.DataFrame) -> None:
+def plot_capturas_especies_por_mes(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Generate a faceted bar/line/point chart showing monthly captures of various insect species.
 
@@ -375,12 +366,12 @@ def plot_capturas_especies_por_mes(df: pd.DataFrame) -> None:
     g.fig.subplots_adjust(top=0.92)
 
     plt.tight_layout()
-    plt.show()
+    return grouped, g.fig
 
 
 
 
-def plot_tendencia_total_capturas(df: pd.DataFrame) -> None:
+def plot_tendencia_total_capturas(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Generate a bar + line + point chart showing the monthly trend of total species captures.
 
@@ -393,9 +384,6 @@ def plot_tendencia_total_capturas(df: pd.DataFrame) -> None:
     --------
     None
     """
-    import pandas as pd
-    import matplotlib.pyplot as plt
-    import seaborn as sns
 
     # Define species columns more efficiently
     species_cols = [
@@ -424,12 +412,10 @@ def plot_tendencia_total_capturas(df: pd.DataFrame) -> None:
     except Exception as e:
         print(f"[Warning] Could not parse and sort 'Mes': {e}")
 
-    # Plotting
-    plt.figure(figsize=(12, 6))
+    # Crear figura y eje
+    fig, ax = plt.subplots(figsize=(12, 6))
     sns.set_style("whitegrid")
 
-    # Create the plot
-    ax = plt.gca()
 
     # Bars
     bars = sns.barplot(data=trend_df, x='Mes', y='total', alpha=0.1, color='steelblue',
@@ -444,33 +430,26 @@ def plot_tendencia_total_capturas(df: pd.DataFrame) -> None:
         # Get the actual x position from the bar plot
         x_pos = bars.patches[i].get_x() + bars.patches[i].get_width() / 2
         y_pos = row['total']
-
-        # Add label with background for better readability
-        plt.text(x_pos, y_pos + max(trend_df['total']) * 0.02,
-                 str(int(row['total'])),
-                 ha='center', va='bottom',
-                 fontsize=9, weight='bold',
-                 bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.8, edgecolor='none'))
+        ax.text(x_pos, y_pos + max(trend_df['total']) * 0.02,
+                str(int(row['total'])),
+                ha='center', va='bottom',
+                fontsize=9, weight='bold',
+                bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.8, edgecolor='none'))
 
     # Formatting
-    plt.title("Tendencia de capturas mensuales", fontsize=14, weight='bold', pad=20)
-    plt.ylabel("Total de capturas", fontsize=12)
-    plt.xlabel("")
-
-    # Improve x-axis labels
-    plt.xticks(rotation=45, ha='right', fontsize=10)
-
-    # Add grid for better readability
+    ax.set_title("Tendencia de capturas mensuales", fontsize=14, weight='bold', pad=20)
+    ax.set_ylabel("Total de capturas", fontsize=12)
+    ax.set_xlabel("")
+    ax.tick_params(axis='x', rotation=45, labelsize=10)
     ax.grid(True, axis='y', alpha=0.3, linestyle='-', linewidth=0.5)
     ax.set_axisbelow(True)
 
-    # Adjust y-axis to give space for labels
     y_max = trend_df['total'].max()
     ax.set_ylim(0, y_max * 1.1)
 
-    # Format y-axis with thousand separators if values are large
     if y_max > 1000:
-        ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{int(x):,}'))
+        from matplotlib.ticker import FuncFormatter
+        ax.yaxis.set_major_formatter(FuncFormatter(lambda x, p: f'{int(x):,}'))
 
-    plt.tight_layout()
-    plt.show()
+    fig.tight_layout()
+    return trend_df, fig

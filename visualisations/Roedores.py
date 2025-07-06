@@ -3,8 +3,13 @@ import pandas as pd
 import seaborn as sns
 import math
 
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import math
 
-def generate_roedores_station_status_plot(df: pd.DataFrame) -> None:
+
+def generate_roedores_station_status_plot(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Generate a faceted bar/line/point chart showing the evolution of rodent station statuses over time.
 
@@ -15,12 +20,9 @@ def generate_roedores_station_status_plot(df: pd.DataFrame) -> None:
 
     Returns:
     -------
-    None
+    plt.Figure
+        The matplotlib figure object ready for insertion into Word document
     """
-    import pandas as pd
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-    import math
 
     # Group and summarize status metrics by month
     grouped = df.groupby('Mes').agg({
@@ -45,17 +47,21 @@ def generate_roedores_station_status_plot(df: pd.DataFrame) -> None:
             categories=sorted(grouped['Mes'], key=lambda x: pd.to_datetime(x, format='%b %Y')),
             ordered=True
         )
+        long_df = long_df.sort_values('Mes')
     except Exception as e:
         print(f"[Warning] Could not parse and sort 'Mes': {e}")
 
-    # Plot with seaborn
+    # Create FacetGrid
     g = sns.FacetGrid(long_df, col='Estado', col_wrap=3, sharey=False, sharex=False, height=3.5)
+
+    # Map plotting functions
     g.map_dataframe(sns.barplot, x='Mes', y='Cantidad', alpha=0.1, color='steelblue')
     g.map_dataframe(sns.lineplot, x='Mes', y='Cantidad', marker='o', color='black')
 
+    # Customize each subplot
     for ax in g.axes.flatten():
-        # Rotate x-axis labels
-        ax.tick_params(axis='x', rotation=45, labelsize=6)
+        # Rotate x-axis labels using plt.setp to avoid warnings
+        plt.setp(ax.get_xticklabels(), rotation=45, ha='right', fontsize=6)
         ax.tick_params(axis='x', labelbottom=True)
 
         # Gridlines
@@ -70,29 +76,32 @@ def generate_roedores_station_status_plot(df: pd.DataFrame) -> None:
         ax.set_yticks(range(y_min, y_max + 1, step))
         ax.set_ylim(bottom=0)
 
+    # Set titles and labels
     g.set_titles("{col_name}")
     g.set_axis_labels("", "Cantidad")
     g.fig.suptitle("Estado de la estación en el tiempo", fontsize=14)
     g.fig.subplots_adjust(top=0.92)
 
-    plt.tight_layout()
-    plt.show()
+    # Apply tight layout
+    g.fig.tight_layout()
+
+    # Return the figure object
+    return grouped, g.fig
 
 
-
-def plot_tendencia_eliminacion_mensual(df: pd.DataFrame) -> None:
+def plot_tendencia_eliminacion_mensual(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Generate a bar + line + point chart showing monthly rodent elimination trend ("Consumido").
 
     Parameters:
     -----------
-    df_long : pd.DataFrame
-        Long-format DataFrame with columns ['Mes', 'Estado', 'Cantidad'],
-        where 'Estado' includes 'Consumido'.
+    df : pd.DataFrame
+        DataFrame with rodent control data including 'Mes' and status columns
 
     Returns:
     --------
-    None
+    plt.Figure
+        The matplotlib figure object ready for insertion into Word document
     """
 
     # Group and summarize status metrics by month
@@ -126,21 +135,23 @@ def plot_tendencia_eliminacion_mensual(df: pd.DataFrame) -> None:
             categories=sorted(summary['Mes'], key=lambda x: pd.to_datetime(x, format='%b %Y')),
             ordered=True
         )
+        summary = summary.sort_values('Mes')
     except Exception as e:
         print(f"[Warning] Could not parse and sort 'Mes': {e}")
 
-    # Plotting
-    plt.figure(figsize=(10, 5))
+    # Create figure and axis explicitly
+    fig, ax = plt.subplots(figsize=(10, 5))
     sns.set_style("whitegrid")
 
     # Bar chart
-    sns.barplot(
+    bars = sns.barplot(
         data=summary,
         x='Mes',
         y='Total de eliminación por mes',
         alpha=0.1,
         color='steelblue',
-        edgecolor='black'
+        edgecolor='black',
+        ax=ax
     )
 
     # Line chart
@@ -149,12 +160,13 @@ def plot_tendencia_eliminacion_mensual(df: pd.DataFrame) -> None:
         x='Mes',
         y='Total de eliminación por mes',
         marker='o',
-        color='black'
+        color='black',
+        ax=ax
     )
 
     # Annotate each point with white text
     for i, row in summary.iterrows():
-        plt.text(
+        ax.text(
             x=i,
             y=row['Total de eliminación por mes'],
             s=str(int(row['Total de eliminación por mes'])),
@@ -166,21 +178,25 @@ def plot_tendencia_eliminacion_mensual(df: pd.DataFrame) -> None:
         )
 
     # Formatting
-    plt.title("Tendencia de eliminación mensual", fontsize=14, weight='bold')
-    plt.xlabel("")
-    plt.ylabel("Tendencia de consumo por mes")
-    plt.xticks(rotation=45)
+    ax.set_title("Tendencia de eliminación mensual", fontsize=14, weight='bold')
+    ax.set_xlabel("")
+    ax.set_ylabel("Tendencia de consumo por mes")
+
+    # Fix rotation using plt.setp to avoid warnings
+    plt.setp(ax.get_xticklabels(), rotation=45, ha='right')
 
     # Y-axis ticks
-    y_min, y_max = plt.ylim()
+    y_min, y_max = ax.get_ylim()
     y_min = math.floor(y_min)
     y_max = math.ceil(y_max)
     step = max(1, 2)  # Fixed step of 2
-    plt.yticks(range(y_min, int(y_max) + 1, step))
-    plt.ylim(bottom=0)
+    ax.set_yticks(range(y_min, int(y_max) + 1, step))
+    ax.set_ylim(bottom=0)
 
-    plt.tight_layout()
-    plt.show()
+    fig.tight_layout()
+
+    # Return the figure object
+    return grouped, fig
 
 
 
