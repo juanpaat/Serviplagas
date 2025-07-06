@@ -9,7 +9,7 @@ import seaborn as sns
 import math
 
 
-def generate_roedores_station_status_plot(df: pd.DataFrame) -> plt.Figure:
+def generate_roedores_station_status_plot(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Generate a faceted bar/line/point chart showing the evolution of rodent station statuses over time.
 
@@ -86,10 +86,10 @@ def generate_roedores_station_status_plot(df: pd.DataFrame) -> plt.Figure:
     g.fig.tight_layout()
 
     # Return the figure object
-    return g.fig
+    return grouped, g.fig
 
 
-def plot_tendencia_eliminacion_mensual(df: pd.DataFrame) -> plt.Figure:
+def plot_tendencia_eliminacion_mensual(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Generate a bar + line + point chart showing monthly rodent elimination trend ("Consumido").
 
@@ -196,7 +196,7 @@ def plot_tendencia_eliminacion_mensual(df: pd.DataFrame) -> plt.Figure:
     fig.tight_layout()
 
     # Return the figure object
-    return fig
+    return grouped, fig
 
 
 

@@ -8,7 +8,7 @@ from datetime import datetime
 
 
 
-def plot_estado_lamparas_por_mes(df: pd.DataFrame) -> None:
+def plot_estado_lamparas_por_mes(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Generate a faceted bar/line/point chart showing monthly lamp condition trends.
 
@@ -75,13 +75,13 @@ def plot_estado_lamparas_por_mes(df: pd.DataFrame) -> None:
     g.fig.subplots_adjust(top=0.92)
 
     plt.tight_layout()
-    return g.fig
+    return grouped, g.fig
 
 
 
 
 
-def plot_estado_lamparas_con_leyenda(df: pd.DataFrame) -> None:
+def plot_estado_lamparas_con_leyenda(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Alternative version with a legend showing status categories and their meanings.
 
@@ -291,13 +291,13 @@ def plot_estado_lamparas_con_leyenda(df: pd.DataFrame) -> None:
     plt.tight_layout()
     plt.subplots_adjust(top=0.92, bottom=0.08)
 
-    return fig
+    return grouped, fig
 
 
 
 
 
-def plot_capturas_especies_por_mes(df: pd.DataFrame) -> None:
+def plot_capturas_especies_por_mes(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Generate a faceted bar/line/point chart showing monthly captures of various insect species.
 
@@ -366,12 +366,12 @@ def plot_capturas_especies_por_mes(df: pd.DataFrame) -> None:
     g.fig.subplots_adjust(top=0.92)
 
     plt.tight_layout()
-    return g.fig
+    return grouped, g.fig
 
 
 
 
-def plot_tendencia_total_capturas(df: pd.DataFrame) -> None:
+def plot_tendencia_total_capturas(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Generate a bar + line + point chart showing the monthly trend of total species captures.
 
@@ -452,4 +452,4 @@ def plot_tendencia_total_capturas(df: pd.DataFrame) -> None:
         ax.yaxis.set_major_formatter(FuncFormatter(lambda x, p: f'{int(x):,}'))
 
     fig.tight_layout()
-    return fig
+    return trend_df, fig

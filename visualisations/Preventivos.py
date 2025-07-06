@@ -3,11 +3,12 @@ import pandas as pd
 import seaborn as sns
 import math
 
-
-
 from io import BytesIO
 
-def generate_order_area_plot(df: pd.DataFrame) -> None:
+
+
+
+def generate_order_area_plot(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Generate a grouped bar plot showing:
         - Cantidad de órdenes
@@ -87,11 +88,10 @@ def generate_order_area_plot(df: pd.DataFrame) -> None:
     )
 
     fig.tight_layout()
-    return fig
+    return summary_df, fig
 
 
-
-def generate_plagas_timeseries_facet(df: pd.DataFrame) -> None:
+def generate_plagas_timeseries_facet(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Generate a faceted line/bar/point chart showing quantity of each pest species by month.
 
@@ -178,10 +178,10 @@ def generate_plagas_timeseries_facet(df: pd.DataFrame) -> None:
     g.fig.subplots_adjust(top=0.92)  # Leave space for the title
 
     plt.tight_layout()
-    return g.fig
+    return grouped, g.fig
 
 
-def generate_total_plagas_trend_plot(df: pd.DataFrame) -> None:
+def generate_total_plagas_trend_plot(df: pd.DataFrame) -> tuple[pd.DataFrame, plt.Figure]:
     """
     Generate a single plot showing the monthly trend of total pests eliminated.
 
@@ -263,7 +263,7 @@ def generate_total_plagas_trend_plot(df: pd.DataFrame) -> None:
         ax.yaxis.set_major_formatter(FuncFormatter(lambda x, p: f'{int(x):,}'))
 
     fig.tight_layout()
-    return fig
+    return trend_df, fig
 
 
 
