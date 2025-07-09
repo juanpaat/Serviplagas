@@ -42,7 +42,11 @@ def add_plot_to_doc(doc, fig):
         return False
 
 # Función que genera el reporte completo y lo guarda en memoria
-def generate_report_in_memory(df_preventivo, df_roedores, df_lamparas):
+def generate_report_in_memory(df_preventivo, df_roedores, df_lamparas, sede: str):
+    df_preventivo = df_preventivo[df_preventivo['Sede'] == sede].copy()
+    df_roedores = df_roedores[df_roedores['Sede'] == sede].copy()
+    df_lamparas = df_lamparas[df_lamparas['Sede'] == sede].copy()   
+
     doc = Document()
     doc.add_heading("Reporte Mensual - Serviplagas", level=1)
 
@@ -192,7 +196,8 @@ def generate_report_in_memory(df_preventivo, df_roedores, df_lamparas):
             row_cells[i].text = str(val)
 
 
+
     # Guardar el documento en disco
-    output_path = "outputs/reporte_serviplagas.docx"
+    output_path = f"outputs/reporte_serviplagas_{sede}.docx"
     doc.save(output_path)
     print(f" ✅  Reporte guardado en: {output_path}")

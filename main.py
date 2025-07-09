@@ -12,8 +12,11 @@ def main():
     df_roedores = transform_roedores_df(load_data('data/Roedores.csv'))
     df_lamparas = transform_lamparas_df(load_data('data/Lámparas.csv'))
 
-    # Generar reporte
-    generate_report_in_memory(df_preventivo, df_roedores, df_lamparas)
+    # Generar reporte Rionegro
+    generate_report_in_memory(df_preventivo, df_roedores, df_lamparas, sede="Rionegro")
+    # Generar reporte Medellín
+    generate_report_in_memory(df_preventivo, df_roedores, df_lamparas, sede="Medellín")
+
 
 if __name__ == "__main__":
     main()
