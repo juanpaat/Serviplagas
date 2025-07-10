@@ -196,4 +196,5 @@ cython_debug/
 .idea/workspace.xml
 .idea/
 .DS_Store
+__pycache__/
 

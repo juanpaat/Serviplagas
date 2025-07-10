@@ -48,7 +48,7 @@ def generate_report_in_memory(df_preventivo, df_roedores, df_lamparas, sede: str
     df_lamparas = df_lamparas[df_lamparas['Sede'] == sede].copy()   
 
     doc = Document()
-    doc.add_heading("Reporte Mensual - Serviplagas", level=1)
+    doc.add_heading(f"Reporte Mensual {sede} - Serviplagas", level=1)
 
     # Sección Preventivos
     doc.add_heading("Preventivos 1", level=2)
