@@ -1,0 +1,549 @@
+================================================================================
+PROMPTS GENERADOS PARA LLM - SISTEMA SERVIPLAGAS
+================================================================================
+
+🔍 PROMPTS DE ANÁLISIS DE TABLAS INDIVIDUALES
+--------------------------------------------------
+
+📊 PROMPT 1: PREVENTIVOS - Order Area
+============================================================
+Analiza la siguiente tabla de datos del reporte de Serviplagas para la sede Rionegro.
+
+CONTEXTO: Análisis de órdenes de mantenimiento, áreas intervenidas y áreas con evidencia de plagas
+
+DATOS:
+     Mes  Cantidad de órdenes  Cantidad de áreas  Áreas con plaga
+Apr 2025                   47                 60                0
+Dec 2024                   46                 58                0
+Feb 2025                   47                 58                0
+Jan 2025                   31                 62                0
+Jun 2025                   32                 45                0
+Mar 2025                   35                 62                0
+May 2025                   33                 60                0
+Nov 2024                   35                 62                0
+Oct 2024                   47                 57                0
+Sep 2024                   35                 59                2
+
+INSTRUCCIONES:
+1. Analiza los datos presentados en la tabla
+2. Identifica tendencias, patrones o valores destacables
+3. Menciona cualquier cambio significativo entre períodos
+4. Destaca los valores más altos y más bajos
+5. Proporciona una interpretación clara y concisa de lo que revelan estos datos
+6. Mantén un tono profesional y técnico apropiado para un reporte de control de plagas
+
+Genera una descripción analítica de máximo 150 palabras sobre estos datos.
+
+============================================================
+
+📊 PROMPT 2: PREVENTIVOS - Plagas Species
+============================================================
+Analiza la siguiente tabla de distribución de especies de plagas para la sede Rionegro.
+
+CONTEXTO: Distribución de especies de plagas encontradas por mes
+
+DATOS:
+     Mes  Cucaracha Americana  Cucaracha Alemana  Hormigas  Moscas  Mosquitos  Zancudos  Ratón casero  Rata Noruega  Ratón de tejado  Otras plagas
+Apr 2025                    0                  0         0       0          0         0             0             0                0             0
+Dec 2024                    0                  0         0       0          0         0             0             0                0             0
+Feb 2025                    0                  0         0       0          0         0             0             0                0             0
+Jan 2025                    0                  0         0       0          0         0             0             0                0             0
+Jun 2025                    0                  0         0       0          0         0             0             0                0             0
+Mar 2025                    0                  0         0       0          0         0             0             0                0             0
+May 2025                    0                  0         0       0          0         0             0             0                0             0
+Nov 2024                    0                  0         0       0          0         0             0             0                0             0
+Oct 2024                    0                  0         0       0          0         0             0             0                0             0
+Sep 2024                    0                  4         0       0          0         0             0             0                0             0
+
+INSTRUCCIONES:
+1. Identifica las especies más frecuentes y problemáticas
+2. Analiza variaciones estacionales en las poblaciones de plagas
+3. Evalúa la efectividad de las medidas preventivas por especie
+4. Destaca cualquier aparición nueva o inusual de especies
+5. Proporciona recomendaciones específicas para el control de especies dominantes
+
+Genera un análisis detallado de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 3: PREVENTIVOS - Total Trend
+============================================================
+Analiza la tendencia de eliminación de plagas en servicios preventivos para Rionegro.
+
+CONTEXTO: Tendencia general de eliminación de plagas en servicios preventivos
+
+DATOS:
+     Mes  total
+Sep 2024      4
+Oct 2024      0
+Nov 2024      0
+Dec 2024      0
+Jan 2025      0
+Feb 2025      0
+Mar 2025      0
+Apr 2025      0
+May 2025      0
+Jun 2025      0
+
+INSTRUCCIONES:
+1. Evalúa la tendencia general de eliminación a lo largo del tiempo
+2. Identifica meses con mayor/menor actividad de plagas
+3. Relaciona los datos con posibles factores estacionales
+4. Evalúa la efectividad del programa preventivo
+5. Sugiere ajustes al cronograma si es necesario
+
+Proporciona un análisis de tendencias de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 4: ROEDORES - Station Status
+============================================================
+Analiza el estado de las estaciones de control de roedores para Rionegro.
+
+CONTEXTO: Estado y actividad de las estaciones portacebos de control de roedores
+
+DATOS:
+     Mes  Consumido  Instalación  Sin novedad  Presencia de roedores  Presencia de bioindicador  Cambio de cebo por deterioro  Desaparecida  Estación dañada  Estación bloqueada
+Apr 2025        0.0            0          172                      0                          0                            12             0                0                   0
+Dec 2024        0.0            0          170                      0                          0                            12             0                0                   0
+Feb 2025        0.0            0          177                      0                          0                             6             0                0                   0
+Jan 2025        1.0            0          227                      0                          0                            24             0                0                   0
+Jun 2025        0.0            0           88                      0                          0                             7             0                0                   0
+Mar 2025        0.0            0          180                      0                          0                             4             0                0                   0
+May 2025        0.0            0          228                      0                          0                             3             0                0                   0
+Nov 2024        0.0            0          229                      0                          0                             4             0                0                   0
+Oct 2024        0.0            0          184                      0                          0                             2             0                0                   0
+Sep 2024        0.0            0          184                      0                          0                             0             0                0                   0
+
+INSTRUCCIONES:
+1. Evalúa la efectividad de las estaciones según el consumo de cebo
+2. Identifica estaciones con mayor actividad de roedores
+3. Analiza el estado de mantenimiento de las estaciones
+4. Evalúa la cobertura y distribución del sistema de control
+5. Recomienda acciones correctivas o preventivas
+
+Genera un análisis operativo de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 5: ROEDORES - Elimination Trend
+============================================================
+Analiza la tendencia de control de roedores a lo largo del tiempo en Rionegro.
+
+CONTEXTO: Tendencia temporal del consumo de cebo y actividad de roedores
+
+DATOS:
+     Mes  Consumido  Instalación  Sin novedad  Presencia de roedores  Presencia de bioindicador  Cambio de cebo por deterioro  Desaparecida  Estación dañada  Estación bloqueada
+Apr 2025        0.0            0          172                      0                          0                            12             0                0                   0
+Dec 2024        0.0            0          170                      0                          0                            12             0                0                   0
+Feb 2025        0.0            0          177                      0                          0                             6             0                0                   0
+Jan 2025        1.0            0          227                      0                          0                            24             0                0                   0
+Jun 2025        0.0            0           88                      0                          0                             7             0                0                   0
+Mar 2025        0.0            0          180                      0                          0                             4             0                0                   0
+May 2025        0.0            0          228                      0                          0                             3             0                0                   0
+Nov 2024        0.0            0          229                      0                          0                             4             0                0                   0
+Oct 2024        0.0            0          184                      0                          0                             2             0                0                   0
+Sep 2024        0.0            0          184                      0                          0                             0             0                0                   0
+
+INSTRUCCIONES:
+1. Evalúa la tendencia del consumo de cebo rodenticida
+2. Identifica períodos de mayor/menor actividad de roedores
+3. Analiza la efectividad del programa de control temporal
+4. Relaciona los datos con factores ambientales o estructurales
+5. Proporciona recomendaciones para optimizar el control
+
+Desarrolla un análisis de tendencias de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 6: LAMPARAS - Status Monthly
+============================================================
+Analiza el estado operativo de las lámparas de control de insectos en Rionegro.
+
+CONTEXTO: Estado operativo mensual de las lámparas de control de insectos
+
+DATOS:
+     Mes  Buena potencia  Deteriorada  Apagada  Bombillo averiado  Desconectada  Faltante  Lámina saturada  Obstruida  Baja potencia
+Apr 2025              28            0        0                  0             0         0                0          0              0
+Dec 2024              26            0        0                  2             0         0                0          0              1
+Feb 2025              26            0        0                  2             0         0                0          0              0
+Jan 2025              32            0        0                  2             0         0                0          0              1
+Jun 2025              20            0        0                  2             0         0                0          0              0
+Mar 2025              28            0        0                  0             0         0                0          0              0
+May 2025              32            0        0                  3             0         0                0          0              0
+Nov 2024              27            0        0                  1             0         0                1          0              0
+Oct 2024              31            0        0                  4             0         0                0          0              0
+Sep 2024              25            0        0                  2             0         0                8          0              0
+
+INSTRUCCIONES:
+1. Evalúa el estado de funcionamiento de las lámparas
+2. Identifica patrones en las fallas y deterioro
+3. Analiza la eficiencia del programa de mantenimiento
+4. Determina necesidades de reemplazo o reparación
+5. Recomienda mejoras en el mantenimiento preventivo
+
+Proporciona un análisis operativo de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 7: LAMPARAS - Status Legend
+============================================================
+Analiza el estado detallado por ubicación de las lámparas en Rionegro.
+
+CONTEXTO: Estado detallado por ubicación de las lámparas de control
+
+DATOS:
+                                             Lámpara  Buena potencia  Deteriorada  Apagada  Bombillo averiado  Desconectada  Faltante  Lámina saturada  Obstruida  Baja potencia  Total de visitas
+                       1 Ingreso urgencias - Torre A               3            0        0                  0             0         0                0          0              0                 3
+     2 Ingreso cuarto de gases medicinales - Torre B               3            0        0                  0             0         0                0          0              0                 3
+                 3 Ingreso cuarto de gases - Torre C               2            0        0                  1             0         0                0          0              0                 3
+                         4 Ingreso terraza - Torre B               3            0        0                  0             0         0                0          0              0                 3
+                         5 Ingreso terraza - Torre C               3            0        0                  1             0         0                0          0              0                 4
+                         6 Ingreso Terraza - Torre D               3            0        0                  0             0         0                0          0              0                 3
+7 Ingreso medicina física y rehabilitación - Torre D               3            0        0                  0             0         0                0          0              0                 3
+
+INSTRUCCIONES:
+1. Identifica ubicaciones con problemas recurrentes
+2. Evalúa la cobertura del sistema de control por área
+3. Analiza patrones de fallas por ubicación específica
+4. Determina prioridades de mantenimiento por zona
+5. Sugiere redistribución o adición de equipos si es necesario
+
+Genera un análisis por ubicación de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 8: LAMPARAS - Captures Species
+============================================================
+Analiza las capturas de insectos voladores por especie en Rionegro.
+
+CONTEXTO: Distribución de capturas de insectos voladores por especie
+
+DATOS:
+     Mes  mariposas  moscas  mosquitos  polillas  zancudos  avispas  abejas  grillos  coleópteros  Otras especies
+Apr 2025     1397.0  3206.0       2305    2363.0     353.0      7.0     9.0      0.0        213.0               0
+Dec 2024      911.0  1732.0       2188    1021.0     373.0      9.0    36.0      0.0         69.0               0
+Feb 2025     1199.0  2344.0       2064    2097.0     450.0     10.0    16.0      0.0        198.0               1
+Jan 2025     1594.0  3122.0       2318    1938.0     645.0     12.0    29.0      0.0         67.0               1
+Jun 2025     1096.0  1428.0       1432    1217.0     197.0      2.0     6.0      0.0         38.0               0
+Mar 2025     1490.0  2602.0       2239    2070.0     241.0      5.0     7.0      0.0        272.0               0
+May 2025     1957.0  4485.0       3166    2523.0     801.0      9.0    27.0      0.0        114.0               2
+Nov 2024     1470.0  2176.0       2705    2014.0     355.0     19.0     2.0      1.0         38.0               0
+Oct 2024     2165.0  3553.0       2982    2168.0     554.0     21.0    17.0      0.0         63.0               1
+Sep 2024     1518.0  3642.0       2703    1834.0     801.0     12.0    13.0      0.0         50.0               0
+
+INSTRUCCIONES:
+1. Identifica las especies más capturadas y problemáticas
+2. Analiza variaciones estacionales en las poblaciones
+3. Evalúa la efectividad de las lámparas por tipo de insecto
+4. Identifica tendencias preocupantes o mejoras
+5. Recomienda ajustes en la estrategia de control
+
+Desarrolla un análisis entomológico de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 9: LAMPARAS - Captures Trend
+============================================================
+Analiza la tendencia de capturas totales de insectos voladores en Rionegro.
+
+CONTEXTO: Tendencia temporal del total de capturas de insectos voladores
+
+DATOS:
+     Mes  total
+Sep 2024  10573
+Oct 2024  11524
+Nov 2024   8780
+Dec 2024   6339
+Jan 2025   9726
+Feb 2025   8379
+Mar 2025   8926
+Apr 2025   9853
+May 2025  13084
+Jun 2025   5416
+
+INSTRUCCIONES:
+1. Evalúa la tendencia general de capturas a lo largo del tiempo
+2. Identifica períodos de mayor actividad de insectos
+3. Relaciona los datos con factores estacionales y ambientales
+4. Evalúa la efectividad general del sistema de control
+5. Proporciona recomendaciones para optimizar las capturas
+
+Proporciona un análisis de tendencias de máximo 150 palabras.
+
+============================================================
+
+📋 PROMPTS DE RESUMEN POR SECCIÓN
+--------------------------------------------------
+
+📂 RESUMEN SECCIÓN - PREVENTIVOS
+============================================================
+Genera un resumen ejecutivo para la sección "Servicios Preventivos" del reporte de Rionegro.
+
+DATOS DE LA SECCIÓN:
+
+--- ORDER_AREA ---
+     Mes  Cantidad de órdenes  Cantidad de áreas  Áreas con plaga
+Apr 2025                   47                 60                0
+Dec 2024                   46                 58                0
+Feb 2025                   47                 58                0
+Jan 2025                   31                 62                0
+Jun 2025                   32                 45                0
+Mar 2025                   35                 62                0
+May 2025                   33                 60                0
+Nov 2024                   35                 62                0
+Oct 2024                   47                 57                0
+Sep 2024                   35                 59                2
+
+--- PLAGAS_SPECIES ---
+     Mes  Cucaracha Americana  Cucaracha Alemana  Hormigas  Moscas  Mosquitos  Zancudos  Ratón casero  Rata Noruega  Ratón de tejado  Otras plagas
+Apr 2025                    0                  0         0       0          0         0             0             0                0             0
+Dec 2024                    0                  0         0       0          0         0             0             0                0             0
+Feb 2025                    0                  0         0       0          0         0             0             0                0             0
+Jan 2025                    0                  0         0       0          0         0             0             0                0             0
+Jun 2025                    0                  0         0       0          0         0             0             0                0             0
+Mar 2025                    0                  0         0       0          0         0             0             0                0             0
+May 2025                    0                  0         0       0          0         0             0             0                0             0
+Nov 2024                    0                  0         0       0          0         0             0             0                0             0
+Oct 2024                    0                  0         0       0          0         0             0             0                0             0
+Sep 2024                    0                  4         0       0          0         0             0             0                0             0
+
+--- TOTAL_TREND ---
+     Mes  total
+Sep 2024      4
+Oct 2024      0
+Nov 2024      0
+Dec 2024      0
+Jan 2025      0
+Feb 2025      0
+Mar 2025      0
+Apr 2025      0
+May 2025      0
+Jun 2025      0
+
+
+INSTRUCCIONES:
+1. Proporciona un resumen ejecutivo que integre los hallazgos de todas las tablas de esta sección
+2. Identifica los aspectos más relevantes del rendimiento en servicios preventivos
+3. Menciona tendencias generales y patrones importantes en la prevención
+4. Destaca cualquier área que requiera atención especial o mejoras
+5. Evalúa la efectividad general de las medidas preventivas implementadas
+6. Mantén un enfoque profesional y orientado a la toma de decisiones
+
+Genera un resumen ejecutivo de máximo 200 palabras.
+
+============================================================
+
+📂 RESUMEN SECCIÓN - ROEDORES
+============================================================
+Genera un resumen ejecutivo para la sección "Control de Roedores" del reporte de Rionegro.
+
+DATOS DE LA SECCIÓN:
+
+--- STATION_STATUS ---
+     Mes  Consumido  Instalación  Sin novedad  Presencia de roedores  Presencia de bioindicador  Cambio de cebo por deterioro  Desaparecida  Estación dañada  Estación bloqueada
+Apr 2025        0.0            0          172                      0                          0                            12             0                0                   0
+Dec 2024        0.0            0          170                      0                          0                            12             0                0                   0
+Feb 2025        0.0            0          177                      0                          0                             6             0                0                   0
+Jan 2025        1.0            0          227                      0                          0                            24             0                0                   0
+Jun 2025        0.0            0           88                      0                          0                             7             0                0                   0
+Mar 2025        0.0            0          180                      0                          0                             4             0                0                   0
+May 2025        0.0            0          228                      0                          0                             3             0                0                   0
+Nov 2024        0.0            0          229                      0                          0                             4             0                0                   0
+Oct 2024        0.0            0          184                      0                          0                             2             0                0                   0
+Sep 2024        0.0            0          184                      0                          0                             0             0                0                   0
+
+--- ELIMINATION_TREND ---
+     Mes  Consumido  Instalación  Sin novedad  Presencia de roedores  Presencia de bioindicador  Cambio de cebo por deterioro  Desaparecida  Estación dañada  Estación bloqueada
+Apr 2025        0.0            0          172                      0                          0                            12             0                0                   0
+Dec 2024        0.0            0          170                      0                          0                            12             0                0                   0
+Feb 2025        0.0            0          177                      0                          0                             6             0                0                   0
+Jan 2025        1.0            0          227                      0                          0                            24             0                0                   0
+Jun 2025        0.0            0           88                      0                          0                             7             0                0                   0
+Mar 2025        0.0            0          180                      0                          0                             4             0                0                   0
+May 2025        0.0            0          228                      0                          0                             3             0                0                   0
+Nov 2024        0.0            0          229                      0                          0                             4             0                0                   0
+Oct 2024        0.0            0          184                      0                          0                             2             0                0                   0
+Sep 2024        0.0            0          184                      0                          0                             0             0                0                   0
+
+
+INSTRUCCIONES:
+1. Evalúa la efectividad general del sistema de control de roedores
+2. Analiza el estado operativo de las estaciones portacebos
+3. Identifica tendencias en la actividad de roedores y consumo de cebo
+4. Destaca logros importantes y áreas de mejora
+5. Proporciona recomendaciones estratégicas para el control de roedores
+6. Considera aspectos de salud pública y seguridad alimentaria
+
+Desarrolla un resumen ejecutivo de máximo 200 palabras.
+
+============================================================
+
+📂 RESUMEN SECCIÓN - LAMPARAS
+============================================================
+Genera un resumen ejecutivo para la sección "Control de Insectos Voladores" del reporte de Rionegro.
+
+DATOS DE LA SECCIÓN:
+
+--- STATUS_MONTHLY ---
+     Mes  Buena potencia  Deteriorada  Apagada  Bombillo averiado  Desconectada  Faltante  Lámina saturada  Obstruida  Baja potencia
+Apr 2025              28            0        0                  0             0         0                0          0              0
+Dec 2024              26            0        0                  2             0         0                0          0              1
+Feb 2025              26            0        0                  2             0         0                0          0              0
+Jan 2025              32            0        0                  2             0         0                0          0              1
+Jun 2025              20            0        0                  2             0         0                0          0              0
+Mar 2025              28            0        0                  0             0         0                0          0              0
+May 2025              32            0        0                  3             0         0                0          0              0
+Nov 2024              27            0        0                  1             0         0                1          0              0
+Oct 2024              31            0        0                  4             0         0                0          0              0
+Sep 2024              25            0        0                  2             0         0                8          0              0
+
+--- STATUS_LEGEND ---
+                                             Lámpara  Buena potencia  Deteriorada  Apagada  Bombillo averiado  Desconectada  Faltante  Lámina saturada  Obstruida  Baja potencia  Total de visitas
+                       1 Ingreso urgencias - Torre A               3            0        0                  0             0         0                0          0              0                 3
+     2 Ingreso cuarto de gases medicinales - Torre B               3            0        0                  0             0         0                0          0              0                 3
+                 3 Ingreso cuarto de gases - Torre C               2            0        0                  1             0         0                0          0              0                 3
+                         4 Ingreso terraza - Torre B               3            0        0                  0             0         0                0          0              0                 3
+                         5 Ingreso terraza - Torre C               3            0        0                  1             0         0                0          0              0                 4
+                         6 Ingreso Terraza - Torre D               3            0        0                  0             0         0                0          0              0                 3
+7 Ingreso medicina física y rehabilitación - Torre D               3            0        0                  0             0         0                0          0              0                 3
+
+--- CAPTURES_SPECIES ---
+     Mes  mariposas  moscas  mosquitos  polillas  zancudos  avispas  abejas  grillos  coleópteros  Otras especies
+Apr 2025     1397.0  3206.0       2305    2363.0     353.0      7.0     9.0      0.0        213.0               0
+Dec 2024      911.0  1732.0       2188    1021.0     373.0      9.0    36.0      0.0         69.0               0
+Feb 2025     1199.0  2344.0       2064    2097.0     450.0     10.0    16.0      0.0        198.0               1
+Jan 2025     1594.0  3122.0       2318    1938.0     645.0     12.0    29.0      0.0         67.0               1
+Jun 2025     1096.0  1428.0       1432    1217.0     197.0      2.0     6.0      0.0         38.0               0
+Mar 2025     1490.0  2602.0       2239    2070.0     241.0      5.0     7.0      0.0        272.0               0
+May 2025     1957.0  4485.0       3166    2523.0     801.0      9.0    27.0      0.0        114.0               2
+Nov 2024     1470.0  2176.0       2705    2014.0     355.0     19.0     2.0      1.0         38.0               0
+Oct 2024     2165.0  3553.0       2982    2168.0     554.0     21.0    17.0      0.0         63.0               1
+Sep 2024     1518.0  3642.0       2703    1834.0     801.0     12.0    13.0      0.0         50.0               0
+
+--- CAPTURES_TREND ---
+     Mes  total
+Sep 2024  10573
+Oct 2024  11524
+Nov 2024   8780
+Dec 2024   6339
+Jan 2025   9726
+Feb 2025   8379
+Mar 2025   8926
+Apr 2025   9853
+May 2025  13084
+Jun 2025   5416
+
+
+INSTRUCCIONES:
+1. Evalúa la efectividad del sistema de lámparas para control de insectos
+2. Analiza el estado operativo y mantenimiento de los equipos
+3. Identifica patrones en las capturas y especies predominantes
+4. Destaca la eficiencia del programa y áreas de oportunidad
+5. Proporciona recomendaciones para optimizar el control de insectos voladores
+6. Considera implicaciones para la calidad del ambiente hospitalario
+
+Proporciona un resumen ejecutivo de máximo 200 palabras.
+
+============================================================
+
+🌐 PROMPT DE RESUMEN GENERAL
+--------------------------------------------------
+
+📑 RESUMEN GENERAL DEL REPORTE
+============================================================
+Genera un resumen ejecutivo integral del reporte mensual de control de plagas para Rionegro.
+
+DATOS CONSOLIDADOS DEL REPORTE:
+
+=== SERVICIOS PREVENTIVOS ===
+
+order_area:
+     Mes  Cantidad de órdenes  Cantidad de áreas  Áreas con plaga
+Apr 2025                   47                 60                0
+Dec 2024                   46                 58                0
+Oct 2024                   47                 57                0
+Sep 2024                   35                 59                2
+
+plagas_species:
+     Mes  Cucaracha Americana  Cucaracha Alemana  Hormigas  Moscas  Mosquitos  Zancudos  Ratón casero  Rata Noruega  Ratón de tejado  Otras plagas
+Apr 2025                    0                  0         0       0          0         0             0             0                0             0
+Dec 2024                    0                  0         0       0          0         0             0             0                0             0
+Oct 2024                    0                  0         0       0          0         0             0             0                0             0
+Sep 2024                    0                  4         0       0          0         0             0             0                0             0
+
+total_trend:
+     Mes  total
+Sep 2024      4
+Oct 2024      0
+May 2025      0
+Jun 2025      0
+
+=== CONTROL DE ROEDORES ===
+
+station_status:
+     Mes  Consumido  Instalación  Sin novedad  Presencia de roedores  Presencia de bioindicador  Cambio de cebo por deterioro  Desaparecida  Estación dañada  Estación bloqueada
+Apr 2025        0.0            0          172                      0                          0                            12             0                0                   0
+Dec 2024        0.0            0          170                      0                          0                            12             0                0                   0
+Oct 2024        0.0            0          184                      0                          0                             2             0                0                   0
+Sep 2024        0.0            0          184                      0                          0                             0             0                0                   0
+
+elimination_trend:
+     Mes  Consumido  Instalación  Sin novedad  Presencia de roedores  Presencia de bioindicador  Cambio de cebo por deterioro  Desaparecida  Estación dañada  Estación bloqueada
+Apr 2025        0.0            0          172                      0                          0                            12             0                0                   0
+Dec 2024        0.0            0          170                      0                          0                            12             0                0                   0
+Oct 2024        0.0            0          184                      0                          0                             2             0                0                   0
+Sep 2024        0.0            0          184                      0                          0                             0             0                0                   0
+
+=== CONTROL DE INSECTOS VOLADORES ===
+
+status_monthly:
+     Mes  Buena potencia  Deteriorada  Apagada  Bombillo averiado  Desconectada  Faltante  Lámina saturada  Obstruida  Baja potencia
+Apr 2025              28            0        0                  0             0         0                0          0              0
+Dec 2024              26            0        0                  2             0         0                0          0              1
+Oct 2024              31            0        0                  4             0         0                0          0              0
+Sep 2024              25            0        0                  2             0         0                8          0              0
+
+status_legend:
+                                             Lámpara  Buena potencia  Deteriorada  Apagada  Bombillo averiado  Desconectada  Faltante  Lámina saturada  Obstruida  Baja potencia  Total de visitas
+                       1 Ingreso urgencias - Torre A               3            0        0                  0             0         0                0          0              0                 3
+     2 Ingreso cuarto de gases medicinales - Torre B               3            0        0                  0             0         0                0          0              0                 3
+                         6 Ingreso Terraza - Torre D               3            0        0                  0             0         0                0          0              0                 3
+7 Ingreso medicina física y rehabilitación - Torre D               3            0        0                  0             0         0                0          0              0                 3
+
+captures_species:
+     Mes  mariposas  moscas  mosquitos  polillas  zancudos  avispas  abejas  grillos  coleópteros  Otras especies
+Apr 2025     1397.0  3206.0       2305    2363.0     353.0      7.0     9.0      0.0        213.0               0
+Dec 2024      911.0  1732.0       2188    1021.0     373.0      9.0    36.0      0.0         69.0               0
+Oct 2024     2165.0  3553.0       2982    2168.0     554.0     21.0    17.0      0.0         63.0               1
+Sep 2024     1518.0  3642.0       2703    1834.0     801.0     12.0    13.0      0.0         50.0               0
+
+captures_trend:
+     Mes  total
+Sep 2024  10573
+Oct 2024  11524
+May 2025  13084
+Jun 2025   5416
+
+
+INSTRUCCIONES:
+1. Proporciona una evaluación integral del estado del programa de control de plagas
+2. Identifica las tendencias más significativas across todas las áreas de control
+3. Evalúa la efectividad general de las medidas preventivas y correctivas implementadas
+4. Destaca los logros principales y las áreas que requieren mejora prioritaria
+5. Proporciona recomendaciones estratégicas para el próximo período
+6. Incluye una evaluación del riesgo general de plagas en la instalación
+7. Considera el cumplimiento de estándares de salud pública y hospitalarios
+8. Mantén un enfoque ejecutivo apropiado para la dirección de la institución
+
+ESTRUCTURA SUGERIDA:
+- Estado general del programa
+- Logros destacados del período
+- Áreas de atención prioritaria
+- Recomendaciones estratégicas
+- Perspectivas para el próximo período
+
+Genera un resumen ejecutivo integral de máximo 300 palabras que sirva como conclusión del reporte.
+
+============================================================
+

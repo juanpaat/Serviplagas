@@ -1,0 +1,603 @@
+================================================================================
+PROMPTS GENERADOS PARA LLM - SISTEMA SERVIPLAGAS
+================================================================================
+
+🔍 PROMPTS DE ANÁLISIS DE TABLAS INDIVIDUALES
+--------------------------------------------------
+
+📊 PROMPT 1: PREVENTIVOS - Order Area
+============================================================
+Analiza la siguiente tabla de datos del reporte de Serviplagas para la sede Medellín.
+
+CONTEXTO: Análisis de órdenes de mantenimiento, áreas intervenidas y áreas con evidencia de plagas
+
+DATOS:
+     Mes  Cantidad de órdenes  Cantidad de áreas  Áreas con plaga
+Apr 2025                   94                272               27
+Dec 2024                  111                268                1
+Feb 2025                   86                273               36
+Jan 2025                   90                272                7
+Jun 2025                   61                213               29
+Mar 2025                  107                267               31
+May 2025                   98                269               37
+Nov 2024                   99                268                1
+Oct 2024                  104                273                2
+Sep 2024                  102                268                1
+
+INSTRUCCIONES:
+1. Analiza los datos presentados en la tabla
+2. Identifica tendencias, patrones o valores destacables
+3. Menciona cualquier cambio significativo entre períodos
+4. Destaca los valores más altos y más bajos
+5. Proporciona una interpretación clara y concisa de lo que revelan estos datos
+6. Mantén un tono profesional y técnico apropiado para un reporte de control de plagas
+
+Genera una descripción analítica de máximo 150 palabras sobre estos datos.
+
+============================================================
+
+📊 PROMPT 2: PREVENTIVOS - Plagas Species
+============================================================
+Analiza la siguiente tabla de distribución de especies de plagas para la sede Medellín.
+
+CONTEXTO: Distribución de especies de plagas encontradas por mes
+
+DATOS:
+     Mes  Cucaracha Americana  Cucaracha Alemana  Hormigas  Moscas  Mosquitos  Zancudos  Ratón casero  Rata Noruega  Ratón de tejado  Otras plagas
+Apr 2025                   30                  0      1450       8        592       172             0             4                0            26
+Dec 2024                  300                  0         2       0          0         0             0             0                0            12
+Feb 2025                  100                  0       230      32        527       151             0             1                0             0
+Jan 2025                  161                 10         6     200       1470       609             0             2                0            12
+Jun 2025                    0                  0       190       0        116       139             0             1                0             5
+Mar 2025                  110                  5       778       5        571       173             0             4                0             6
+May 2025                    0                  0        45      32       1109       229             0             0                0            20
+Nov 2024                  300                  0         2       0       1000         0             0             0                0             0
+Oct 2024                  200                  4      1000      50         50         0             0             0                0             0
+Sep 2024                  200                  0         2       0       1000         0             0             0                0             0
+
+INSTRUCCIONES:
+1. Identifica las especies más frecuentes y problemáticas
+2. Analiza variaciones estacionales en las poblaciones de plagas
+3. Evalúa la efectividad de las medidas preventivas por especie
+4. Destaca cualquier aparición nueva o inusual de especies
+5. Proporciona recomendaciones específicas para el control de especies dominantes
+
+Genera un análisis detallado de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 3: PREVENTIVOS - Total Trend
+============================================================
+Analiza la tendencia de eliminación de plagas en servicios preventivos para Medellín.
+
+CONTEXTO: Tendencia general de eliminación de plagas en servicios preventivos
+
+DATOS:
+     Mes  total
+Sep 2024   1202
+Oct 2024   1304
+Nov 2024   1302
+Dec 2024    314
+Jan 2025   2470
+Feb 2025   1041
+Mar 2025   1652
+Apr 2025   2282
+May 2025   1435
+Jun 2025    451
+
+INSTRUCCIONES:
+1. Evalúa la tendencia general de eliminación a lo largo del tiempo
+2. Identifica meses con mayor/menor actividad de plagas
+3. Relaciona los datos con posibles factores estacionales
+4. Evalúa la efectividad del programa preventivo
+5. Sugiere ajustes al cronograma si es necesario
+
+Proporciona un análisis de tendencias de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 4: ROEDORES - Station Status
+============================================================
+Analiza el estado de las estaciones de control de roedores para Medellín.
+
+CONTEXTO: Estado y actividad de las estaciones portacebos de control de roedores
+
+DATOS:
+     Mes  Consumido  Instalación  Sin novedad  Presencia de roedores  Presencia de bioindicador  Cambio de cebo por deterioro  Desaparecida  Estación dañada  Estación bloqueada
+Apr 2025       13.0            0          102                      0                         14                             1             0                0                   0
+Dec 2024        0.0            0           39                      0                          1                            21             0                0                   0
+Feb 2025        3.0            1          110                      0                          8                            13             0                0                   0
+Jan 2025        7.0            0          118                      0                          0                             7             0                1                   1
+Jun 2025       10.0            0           67                      0                          9                             0             0                0                   0
+Mar 2025        7.0            0           94                      0                         22                             1             0                0                   0
+May 2025        8.0            0           69                      0                          8                             1             0                0                   0
+Nov 2024        2.0            0           78                      0                          1                            40             0                0                   2
+Oct 2024        0.0            0           83                      0                          1                            45             0                0                   0
+Sep 2024        0.0            0           82                      0                          3                            45             0                0                   0
+
+INSTRUCCIONES:
+1. Evalúa la efectividad de las estaciones según el consumo de cebo
+2. Identifica estaciones con mayor actividad de roedores
+3. Analiza el estado de mantenimiento de las estaciones
+4. Evalúa la cobertura y distribución del sistema de control
+5. Recomienda acciones correctivas o preventivas
+
+Genera un análisis operativo de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 5: ROEDORES - Elimination Trend
+============================================================
+Analiza la tendencia de control de roedores a lo largo del tiempo en Medellín.
+
+CONTEXTO: Tendencia temporal del consumo de cebo y actividad de roedores
+
+DATOS:
+     Mes  Consumido  Instalación  Sin novedad  Presencia de roedores  Presencia de bioindicador  Cambio de cebo por deterioro  Desaparecida  Estación dañada  Estación bloqueada
+Apr 2025       13.0            0          102                      0                         14                             1             0                0                   0
+Dec 2024        0.0            0           39                      0                          1                            21             0                0                   0
+Feb 2025        3.0            1          110                      0                          8                            13             0                0                   0
+Jan 2025        7.0            0          118                      0                          0                             7             0                1                   1
+Jun 2025       10.0            0           67                      0                          9                             0             0                0                   0
+Mar 2025        7.0            0           94                      0                         22                             1             0                0                   0
+May 2025        8.0            0           69                      0                          8                             1             0                0                   0
+Nov 2024        2.0            0           78                      0                          1                            40             0                0                   2
+Oct 2024        0.0            0           83                      0                          1                            45             0                0                   0
+Sep 2024        0.0            0           82                      0                          3                            45             0                0                   0
+
+INSTRUCCIONES:
+1. Evalúa la tendencia del consumo de cebo rodenticida
+2. Identifica períodos de mayor/menor actividad de roedores
+3. Analiza la efectividad del programa de control temporal
+4. Relaciona los datos con factores ambientales o estructurales
+5. Proporciona recomendaciones para optimizar el control
+
+Desarrolla un análisis de tendencias de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 6: LAMPARAS - Status Monthly
+============================================================
+Analiza el estado operativo de las lámparas de control de insectos en Medellín.
+
+CONTEXTO: Estado operativo mensual de las lámparas de control de insectos
+
+DATOS:
+     Mes  Buena potencia  Deteriorada  Apagada  Bombillo averiado  Desconectada  Faltante  Lámina saturada  Obstruida  Baja potencia
+Apr 2025              62            0        0                 10             0         0               51          0              1
+Dec 2024              63            0        0                  0             0         0               23          5              0
+Feb 2025              60            0        0                  7             0         0               47          0              3
+Jan 2025              66            0        0                  0             0         0                0          0              0
+Jun 2025              32            0        1                  0             1         0               30          0              0
+Mar 2025              63            0        0                  1             0         0               49          0              0
+May 2025              64            0        0                  2             3         0               54          1              1
+Nov 2024              65            0        0                  0             1         0               34          0              0
+Oct 2024              65            0        0                  0             0         0               57          0              0
+Sep 2024              65            0        0                  0             1         0               57          0              0
+
+INSTRUCCIONES:
+1. Evalúa el estado de funcionamiento de las lámparas
+2. Identifica patrones en las fallas y deterioro
+3. Analiza la eficiencia del programa de mantenimiento
+4. Determina necesidades de reemplazo o reparación
+5. Recomienda mejoras en el mantenimiento preventivo
+
+Proporciona un análisis operativo de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 7: LAMPARAS - Status Legend
+============================================================
+Analiza el estado detallado por ubicación de las lámparas en Medellín.
+
+CONTEXTO: Estado detallado por ubicación de las lámparas de control
+
+DATOS:
+                          Lámpara  Buena potencia  Deteriorada  Apagada  Bombillo averiado  Desconectada  Faltante  Lámina saturada  Obstruida  Baja potencia  Total de visitas
+                Acopio de basuras               1            0        0                  0             0         0                1          0              0                 2
+       Atención inicial bloque 11               1            0        0                  0             0         0                1          0              0                 2
+                Banco de sangre 1               1            0        0                  0             0         0                1          0              0                 2
+                Banco de sangre 2               1            0        0                  0             0         0                1          0              0                 2
+      Coordinación de facturación               1            0        0                  0             0         0                1          0              0                 2
+          Departamento comercial                1            0        0                  0             0         0                1          0              0                 2
+             Esterilizacion CPE 1               1            0        0                  0             0         0                1          0              0                 2
+             Esterilizacion CPE 2               1            0        0                  0             0         0                1          0              0                 2
+                      Hemodinamia               1            0        0                  0             0         0                1          0              0                 2
+            Imagenología 2do piso               1            0        0                  0             0         0                1          0              0                 2
+                  Infraestructura               1            0        0                  0             0         0                1          0              0                 2
+               Lámpara Patinadora               1            0        0                  0             0         0                1          0              0                 2
+Medicina interna y rehabilitación               1            0        0                  0             0         0                1          0              0                 2
+                    Pensionados 1               0            0        1                  0             0         0                0          0              0                 1
+                    Pensionados 2               1            0        0                  0             0         0                1          0              0                 2
+                    Pensionados 3               1            0        0                  0             0         0                1          0              0                 2
+            Plazoleta Policlinica               1            0        0                  0             0         0                1          0              0                 2
+            Quirófano Policlinica               1            0        0                  0             0         0                1          0              0                 2
+            Quirófano cardiología               1            0        0                  0             0         0                0          0              0                 1
+            Quirófano pensionados               1            0        0                  0             0         0                0          0              0                 1
+                  Sala Cristo Rey               1            0        0                  0             0         0                1          0              0                 2
+             Sala Elkin Rodriguez               1            0        0                  0             0         0                1          0              0                 2
+           Sala Maria Auxiliadora               1            0        0                  0             0         0                1          0              0                 2
+                       Sala Pio X               1            0        0                  0             0         0                1          0              0                 2
+                  Sala San Camilo               1            0        0                  0             0         0                1          0              0                 2
+                  Sala San Rafael               1            0        0                  0             0         0                1          0              0                 2
+              Sala Santa Catalina               0            0        0                  0             1         0                0          0              0                 1
+              Sala Santa Genoveva               1            0        0                  0             0         0                1          0              0                 2
+                    Sala quemados               1            0        0                  0             0         0                1          0              0                 2
+             Sala quimioterapia B               1            0        0                  0             0         0                1          0              0                 2
+                    Sala san jose               1            0        0                  0             0         0                1          0              0                 2
+                   UCI San Miguel               1            0        0                  0             0         0                1          0              0                 2
+              UCI Santa Margarita               1            0        0                  0             0         0                1          0              0                 2
+                      UCI medica                1            0        0                  0             0         0                1          0              0                 2
+
+INSTRUCCIONES:
+1. Identifica ubicaciones con problemas recurrentes
+2. Evalúa la cobertura del sistema de control por área
+3. Analiza patrones de fallas por ubicación específica
+4. Determina prioridades de mantenimiento por zona
+5. Sugiere redistribución o adición de equipos si es necesario
+
+Genera un análisis por ubicación de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 8: LAMPARAS - Captures Species
+============================================================
+Analiza las capturas de insectos voladores por especie en Medellín.
+
+CONTEXTO: Distribución de capturas de insectos voladores por especie
+
+DATOS:
+     Mes  mariposas  moscas  mosquitos  polillas  zancudos  avispas  abejas  grillos  coleópteros  Otras especies
+Apr 2025       39.0  3719.0     155878     938.0     857.0     92.0   491.0     15.0         67.0               0
+Dec 2024       57.0  1116.0     141677    4696.0     834.0     65.0   373.0     12.0         77.0               0
+Feb 2025       47.0  1246.0     149229     793.0    1085.0     73.0  2558.0      9.0         54.0               1
+Jan 2025       57.0  5318.0     139983     938.0     958.0    115.0   399.0     34.0         77.0               0
+Jun 2025       16.0   475.0      70506     377.0     451.0     36.0   200.0      1.0         30.0               0
+Mar 2025       49.0  1174.0     132482    4768.0     894.0    107.0   766.0     24.0         57.0               0
+May 2025       35.0  1081.0     140051     814.0     810.0     67.0   457.0      8.0         78.0               0
+Nov 2024       77.0  1125.0     150446     833.0     985.0     72.0   272.0     33.0       2555.0               0
+Oct 2024       65.0  1286.0     149921     995.0    1175.0     91.0   487.0     34.0        103.0               0
+Sep 2024       86.0  1311.0     146853     957.0    1039.0     66.0   443.0     56.0        106.0               0
+
+INSTRUCCIONES:
+1. Identifica las especies más capturadas y problemáticas
+2. Analiza variaciones estacionales en las poblaciones
+3. Evalúa la efectividad de las lámparas por tipo de insecto
+4. Identifica tendencias preocupantes o mejoras
+5. Recomienda ajustes en la estrategia de control
+
+Desarrolla un análisis entomológico de máximo 150 palabras.
+
+============================================================
+
+📊 PROMPT 9: LAMPARAS - Captures Trend
+============================================================
+Analiza la tendencia de capturas totales de insectos voladores en Medellín.
+
+CONTEXTO: Tendencia temporal del total de capturas de insectos voladores
+
+DATOS:
+     Mes  total
+Sep 2024 150917
+Oct 2024 154157
+Nov 2024 156398
+Dec 2024 148907
+Jan 2025 147879
+Feb 2025 155095
+Mar 2025 140321
+Apr 2025 162096
+May 2025 143401
+Jun 2025  72092
+
+INSTRUCCIONES:
+1. Evalúa la tendencia general de capturas a lo largo del tiempo
+2. Identifica períodos de mayor actividad de insectos
+3. Relaciona los datos con factores estacionales y ambientales
+4. Evalúa la efectividad general del sistema de control
+5. Proporciona recomendaciones para optimizar las capturas
+
+Proporciona un análisis de tendencias de máximo 150 palabras.
+
+============================================================
+
+📋 PROMPTS DE RESUMEN POR SECCIÓN
+--------------------------------------------------
+
+📂 RESUMEN SECCIÓN - PREVENTIVOS
+============================================================
+Genera un resumen ejecutivo para la sección "Servicios Preventivos" del reporte de Medellín.
+
+DATOS DE LA SECCIÓN:
+
+--- ORDER_AREA ---
+     Mes  Cantidad de órdenes  Cantidad de áreas  Áreas con plaga
+Apr 2025                   94                272               27
+Dec 2024                  111                268                1
+Feb 2025                   86                273               36
+Jan 2025                   90                272                7
+Jun 2025                   61                213               29
+Mar 2025                  107                267               31
+May 2025                   98                269               37
+Nov 2024                   99                268                1
+Oct 2024                  104                273                2
+Sep 2024                  102                268                1
+
+--- PLAGAS_SPECIES ---
+     Mes  Cucaracha Americana  Cucaracha Alemana  Hormigas  Moscas  Mosquitos  Zancudos  Ratón casero  Rata Noruega  Ratón de tejado  Otras plagas
+Apr 2025                   30                  0      1450       8        592       172             0             4                0            26
+Dec 2024                  300                  0         2       0          0         0             0             0                0            12
+Feb 2025                  100                  0       230      32        527       151             0             1                0             0
+Jan 2025                  161                 10         6     200       1470       609             0             2                0            12
+Jun 2025                    0                  0       190       0        116       139             0             1                0             5
+Mar 2025                  110                  5       778       5        571       173             0             4                0             6
+May 2025                    0                  0        45      32       1109       229             0             0                0            20
+Nov 2024                  300                  0         2       0       1000         0             0             0                0             0
+Oct 2024                  200                  4      1000      50         50         0             0             0                0             0
+Sep 2024                  200                  0         2       0       1000         0             0             0                0             0
+
+--- TOTAL_TREND ---
+     Mes  total
+Sep 2024   1202
+Oct 2024   1304
+Nov 2024   1302
+Dec 2024    314
+Jan 2025   2470
+Feb 2025   1041
+Mar 2025   1652
+Apr 2025   2282
+May 2025   1435
+Jun 2025    451
+
+
+INSTRUCCIONES:
+1. Proporciona un resumen ejecutivo que integre los hallazgos de todas las tablas de esta sección
+2. Identifica los aspectos más relevantes del rendimiento en servicios preventivos
+3. Menciona tendencias generales y patrones importantes en la prevención
+4. Destaca cualquier área que requiera atención especial o mejoras
+5. Evalúa la efectividad general de las medidas preventivas implementadas
+6. Mantén un enfoque profesional y orientado a la toma de decisiones
+
+Genera un resumen ejecutivo de máximo 200 palabras.
+
+============================================================
+
+📂 RESUMEN SECCIÓN - ROEDORES
+============================================================
+Genera un resumen ejecutivo para la sección "Control de Roedores" del reporte de Medellín.
+
+DATOS DE LA SECCIÓN:
+
+--- STATION_STATUS ---
+     Mes  Consumido  Instalación  Sin novedad  Presencia de roedores  Presencia de bioindicador  Cambio de cebo por deterioro  Desaparecida  Estación dañada  Estación bloqueada
+Apr 2025       13.0            0          102                      0                         14                             1             0                0                   0
+Dec 2024        0.0            0           39                      0                          1                            21             0                0                   0
+Feb 2025        3.0            1          110                      0                          8                            13             0                0                   0
+Jan 2025        7.0            0          118                      0                          0                             7             0                1                   1
+Jun 2025       10.0            0           67                      0                          9                             0             0                0                   0
+Mar 2025        7.0            0           94                      0                         22                             1             0                0                   0
+May 2025        8.0            0           69                      0                          8                             1             0                0                   0
+Nov 2024        2.0            0           78                      0                          1                            40             0                0                   2
+Oct 2024        0.0            0           83                      0                          1                            45             0                0                   0
+Sep 2024        0.0            0           82                      0                          3                            45             0                0                   0
+
+--- ELIMINATION_TREND ---
+     Mes  Consumido  Instalación  Sin novedad  Presencia de roedores  Presencia de bioindicador  Cambio de cebo por deterioro  Desaparecida  Estación dañada  Estación bloqueada
+Apr 2025       13.0            0          102                      0                         14                             1             0                0                   0
+Dec 2024        0.0            0           39                      0                          1                            21             0                0                   0
+Feb 2025        3.0            1          110                      0                          8                            13             0                0                   0
+Jan 2025        7.0            0          118                      0                          0                             7             0                1                   1
+Jun 2025       10.0            0           67                      0                          9                             0             0                0                   0
+Mar 2025        7.0            0           94                      0                         22                             1             0                0                   0
+May 2025        8.0            0           69                      0                          8                             1             0                0                   0
+Nov 2024        2.0            0           78                      0                          1                            40             0                0                   2
+Oct 2024        0.0            0           83                      0                          1                            45             0                0                   0
+Sep 2024        0.0            0           82                      0                          3                            45             0                0                   0
+
+
+INSTRUCCIONES:
+1. Evalúa la efectividad general del sistema de control de roedores
+2. Analiza el estado operativo de las estaciones portacebos
+3. Identifica tendencias en la actividad de roedores y consumo de cebo
+4. Destaca logros importantes y áreas de mejora
+5. Proporciona recomendaciones estratégicas para el control de roedores
+6. Considera aspectos de salud pública y seguridad alimentaria
+
+Desarrolla un resumen ejecutivo de máximo 200 palabras.
+
+============================================================
+
+📂 RESUMEN SECCIÓN - LAMPARAS
+============================================================
+Genera un resumen ejecutivo para la sección "Control de Insectos Voladores" del reporte de Medellín.
+
+DATOS DE LA SECCIÓN:
+
+--- STATUS_MONTHLY ---
+     Mes  Buena potencia  Deteriorada  Apagada  Bombillo averiado  Desconectada  Faltante  Lámina saturada  Obstruida  Baja potencia
+Apr 2025              62            0        0                 10             0         0               51          0              1
+Dec 2024              63            0        0                  0             0         0               23          5              0
+Feb 2025              60            0        0                  7             0         0               47          0              3
+Jan 2025              66            0        0                  0             0         0                0          0              0
+Jun 2025              32            0        1                  0             1         0               30          0              0
+Mar 2025              63            0        0                  1             0         0               49          0              0
+May 2025              64            0        0                  2             3         0               54          1              1
+Nov 2024              65            0        0                  0             1         0               34          0              0
+Oct 2024              65            0        0                  0             0         0               57          0              0
+Sep 2024              65            0        0                  0             1         0               57          0              0
+
+--- STATUS_LEGEND ---
+                          Lámpara  Buena potencia  Deteriorada  Apagada  Bombillo averiado  Desconectada  Faltante  Lámina saturada  Obstruida  Baja potencia  Total de visitas
+                Acopio de basuras               1            0        0                  0             0         0                1          0              0                 2
+       Atención inicial bloque 11               1            0        0                  0             0         0                1          0              0                 2
+                Banco de sangre 1               1            0        0                  0             0         0                1          0              0                 2
+                Banco de sangre 2               1            0        0                  0             0         0                1          0              0                 2
+      Coordinación de facturación               1            0        0                  0             0         0                1          0              0                 2
+          Departamento comercial                1            0        0                  0             0         0                1          0              0                 2
+             Esterilizacion CPE 1               1            0        0                  0             0         0                1          0              0                 2
+             Esterilizacion CPE 2               1            0        0                  0             0         0                1          0              0                 2
+                      Hemodinamia               1            0        0                  0             0         0                1          0              0                 2
+            Imagenología 2do piso               1            0        0                  0             0         0                1          0              0                 2
+                  Infraestructura               1            0        0                  0             0         0                1          0              0                 2
+               Lámpara Patinadora               1            0        0                  0             0         0                1          0              0                 2
+Medicina interna y rehabilitación               1            0        0                  0             0         0                1          0              0                 2
+                    Pensionados 1               0            0        1                  0             0         0                0          0              0                 1
+                    Pensionados 2               1            0        0                  0             0         0                1          0              0                 2
+                    Pensionados 3               1            0        0                  0             0         0                1          0              0                 2
+            Plazoleta Policlinica               1            0        0                  0             0         0                1          0              0                 2
+            Quirófano Policlinica               1            0        0                  0             0         0                1          0              0                 2
+            Quirófano cardiología               1            0        0                  0             0         0                0          0              0                 1
+            Quirófano pensionados               1            0        0                  0             0         0                0          0              0                 1
+                  Sala Cristo Rey               1            0        0                  0             0         0                1          0              0                 2
+             Sala Elkin Rodriguez               1            0        0                  0             0         0                1          0              0                 2
+           Sala Maria Auxiliadora               1            0        0                  0             0         0                1          0              0                 2
+                       Sala Pio X               1            0        0                  0             0         0                1          0              0                 2
+                  Sala San Camilo               1            0        0                  0             0         0                1          0              0                 2
+                  Sala San Rafael               1            0        0                  0             0         0                1          0              0                 2
+              Sala Santa Catalina               0            0        0                  0             1         0                0          0              0                 1
+              Sala Santa Genoveva               1            0        0                  0             0         0                1          0              0                 2
+                    Sala quemados               1            0        0                  0             0         0                1          0              0                 2
+             Sala quimioterapia B               1            0        0                  0             0         0                1          0              0                 2
+                    Sala san jose               1            0        0                  0             0         0                1          0              0                 2
+                   UCI San Miguel               1            0        0                  0             0         0                1          0              0                 2
+              UCI Santa Margarita               1            0        0                  0             0         0                1          0              0                 2
+                      UCI medica                1            0        0                  0             0         0                1          0              0                 2
+
+--- CAPTURES_SPECIES ---
+     Mes  mariposas  moscas  mosquitos  polillas  zancudos  avispas  abejas  grillos  coleópteros  Otras especies
+Apr 2025       39.0  3719.0     155878     938.0     857.0     92.0   491.0     15.0         67.0               0
+Dec 2024       57.0  1116.0     141677    4696.0     834.0     65.0   373.0     12.0         77.0               0
+Feb 2025       47.0  1246.0     149229     793.0    1085.0     73.0  2558.0      9.0         54.0               1
+Jan 2025       57.0  5318.0     139983     938.0     958.0    115.0   399.0     34.0         77.0               0
+Jun 2025       16.0   475.0      70506     377.0     451.0     36.0   200.0      1.0         30.0               0
+Mar 2025       49.0  1174.0     132482    4768.0     894.0    107.0   766.0     24.0         57.0               0
+May 2025       35.0  1081.0     140051     814.0     810.0     67.0   457.0      8.0         78.0               0
+Nov 2024       77.0  1125.0     150446     833.0     985.0     72.0   272.0     33.0       2555.0               0
+Oct 2024       65.0  1286.0     149921     995.0    1175.0     91.0   487.0     34.0        103.0               0
+Sep 2024       86.0  1311.0     146853     957.0    1039.0     66.0   443.0     56.0        106.0               0
+
+--- CAPTURES_TREND ---
+     Mes  total
+Sep 2024 150917
+Oct 2024 154157
+Nov 2024 156398
+Dec 2024 148907
+Jan 2025 147879
+Feb 2025 155095
+Mar 2025 140321
+Apr 2025 162096
+May 2025 143401
+Jun 2025  72092
+
+
+INSTRUCCIONES:
+1. Evalúa la efectividad del sistema de lámparas para control de insectos
+2. Analiza el estado operativo y mantenimiento de los equipos
+3. Identifica patrones en las capturas y especies predominantes
+4. Destaca la eficiencia del programa y áreas de oportunidad
+5. Proporciona recomendaciones para optimizar el control de insectos voladores
+6. Considera implicaciones para la calidad del ambiente hospitalario
+
+Proporciona un resumen ejecutivo de máximo 200 palabras.
+
+============================================================
+
+🌐 PROMPT DE RESUMEN GENERAL
+--------------------------------------------------
+
+📑 RESUMEN GENERAL DEL REPORTE
+============================================================
+Genera un resumen ejecutivo integral del reporte mensual de control de plagas para Medellín.
+
+DATOS CONSOLIDADOS DEL REPORTE:
+
+=== SERVICIOS PREVENTIVOS ===
+
+order_area:
+     Mes  Cantidad de órdenes  Cantidad de áreas  Áreas con plaga
+Apr 2025                   94                272               27
+Dec 2024                  111                268                1
+Oct 2024                  104                273                2
+Sep 2024                  102                268                1
+
+plagas_species:
+     Mes  Cucaracha Americana  Cucaracha Alemana  Hormigas  Moscas  Mosquitos  Zancudos  Ratón casero  Rata Noruega  Ratón de tejado  Otras plagas
+Apr 2025                   30                  0      1450       8        592       172             0             4                0            26
+Dec 2024                  300                  0         2       0          0         0             0             0                0            12
+Oct 2024                  200                  4      1000      50         50         0             0             0                0             0
+Sep 2024                  200                  0         2       0       1000         0             0             0                0             0
+
+total_trend:
+     Mes  total
+Sep 2024   1202
+Oct 2024   1304
+May 2025   1435
+Jun 2025    451
+
+=== CONTROL DE ROEDORES ===
+
+station_status:
+     Mes  Consumido  Instalación  Sin novedad  Presencia de roedores  Presencia de bioindicador  Cambio de cebo por deterioro  Desaparecida  Estación dañada  Estación bloqueada
+Apr 2025       13.0            0          102                      0                         14                             1             0                0                   0
+Dec 2024        0.0            0           39                      0                          1                            21             0                0                   0
+Oct 2024        0.0            0           83                      0                          1                            45             0                0                   0
+Sep 2024        0.0            0           82                      0                          3                            45             0                0                   0
+
+elimination_trend:
+     Mes  Consumido  Instalación  Sin novedad  Presencia de roedores  Presencia de bioindicador  Cambio de cebo por deterioro  Desaparecida  Estación dañada  Estación bloqueada
+Apr 2025       13.0            0          102                      0                         14                             1             0                0                   0
+Dec 2024        0.0            0           39                      0                          1                            21             0                0                   0
+Oct 2024        0.0            0           83                      0                          1                            45             0                0                   0
+Sep 2024        0.0            0           82                      0                          3                            45             0                0                   0
+
+=== CONTROL DE INSECTOS VOLADORES ===
+
+status_monthly:
+     Mes  Buena potencia  Deteriorada  Apagada  Bombillo averiado  Desconectada  Faltante  Lámina saturada  Obstruida  Baja potencia
+Apr 2025              62            0        0                 10             0         0               51          0              1
+Dec 2024              63            0        0                  0             0         0               23          5              0
+Oct 2024              65            0        0                  0             0         0               57          0              0
+Sep 2024              65            0        0                  0             1         0               57          0              0
+
+status_legend:
+                   Lámpara  Buena potencia  Deteriorada  Apagada  Bombillo averiado  Desconectada  Faltante  Lámina saturada  Obstruida  Baja potencia  Total de visitas
+         Acopio de basuras               1            0        0                  0             0         0                1          0              0                 2
+Atención inicial bloque 11               1            0        0                  0             0         0                1          0              0                 2
+       UCI Santa Margarita               1            0        0                  0             0         0                1          0              0                 2
+               UCI medica                1            0        0                  0             0         0                1          0              0                 2
+
+captures_species:
+     Mes  mariposas  moscas  mosquitos  polillas  zancudos  avispas  abejas  grillos  coleópteros  Otras especies
+Apr 2025       39.0  3719.0     155878     938.0     857.0     92.0   491.0     15.0         67.0               0
+Dec 2024       57.0  1116.0     141677    4696.0     834.0     65.0   373.0     12.0         77.0               0
+Oct 2024       65.0  1286.0     149921     995.0    1175.0     91.0   487.0     34.0        103.0               0
+Sep 2024       86.0  1311.0     146853     957.0    1039.0     66.0   443.0     56.0        106.0               0
+
+captures_trend:
+     Mes  total
+Sep 2024 150917
+Oct 2024 154157
+May 2025 143401
+Jun 2025  72092
+
+
+INSTRUCCIONES:
+1. Proporciona una evaluación integral del estado del programa de control de plagas
+2. Identifica las tendencias más significativas across todas las áreas de control
+3. Evalúa la efectividad general de las medidas preventivas y correctivas implementadas
+4. Destaca los logros principales y las áreas que requieren mejora prioritaria
+5. Proporciona recomendaciones estratégicas para el próximo período
+6. Incluye una evaluación del riesgo general de plagas en la instalación
+7. Considera el cumplimiento de estándares de salud pública y hospitalarios
+8. Mantén un enfoque ejecutivo apropiado para la dirección de la institución
+
+ESTRUCTURA SUGERIDA:
+- Estado general del programa
+- Logros destacados del período
+- Áreas de atención prioritaria
+- Recomendaciones estratégicas
+- Perspectivas para el próximo período
+
+Genera un resumen ejecutivo integral de máximo 300 palabras que sirva como conclusión del reporte.
+
+============================================================
+
