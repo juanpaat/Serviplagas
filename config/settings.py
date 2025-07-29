@@ -3,6 +3,12 @@ Configuración del sistema Serviplagas.
 Este archivo contiene configuraciones globales para el sistema de reportes.
 """
 
+import os
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde .env
+load_dotenv()
+
 # =============================================================================
 # CONFIGURACIÓN DE DATOS
 # =============================================================================
@@ -25,19 +31,19 @@ LOCAL_FILES = {
 # CONFIGURACIÓN LLM
 # =============================================================================
 
-# Configuración para integración futura con APIs LLM
+# Configuración para integración con APIs LLM
 LLM_CONFIG = {
-    'enabled': False,  # Cambiar a True cuando se tenga API key
+    'enabled': True,  # Cambiar a True cuando tengas API key
     'provider': 'openai',  # 'openai', 'anthropic', 'local'
     'model': 'gpt-4',
     'max_tokens': 500,
     'temperature': 0.3
 }
 
-# Claves API (usar variables de entorno en producción)
+# Claves API (cargadas desde variables de entorno)
 API_KEYS = {
-    'openai': None,  # os.getenv('OPENAI_API_KEY')
-    'anthropic': None,  # os.getenv('ANTHROPIC_API_KEY')
+    'openai': os.getenv('OPENAI_API_KEY'),
+    'anthropic': os.getenv('ANTHROPIC_API_KEY'),
 }
 
 # =============================================================================
