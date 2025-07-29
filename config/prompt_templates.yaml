@@ -1,0 +1,272 @@
+# Plantillas de prompts para el sistema Serviplagas
+# Las variables {table_data}, {sede}, {section_name}, etc. serán reemplazadas dinámicamente
+
+# Prompts para análisis de tablas individuales
+table_prompts:
+  preventivos:
+    order_area:
+      title: "PREVENTIVOS - Órdenes vs Áreas"
+      description: "Análisis de órdenes de mantenimiento, áreas intervenidas y áreas con evidencia de plagas"
+      template: |
+        Analiza la siguiente tabla de datos del reporte de Serviplagas para la sede {sede}.
+        
+        CONTEXTO: {description}
+        
+        DATOS:
+        {table_data}
+        
+        INSTRUCCIONES:
+        1. Analiza los datos presentados en la tabla
+        2. Identifica tendencias, patrones o valores destacables
+        3. Menciona cualquier cambio significativo entre períodos
+        4. Destaca los valores más altos y más bajos
+        5. Proporciona una interpretación clara y concisa de lo que revelan estos datos
+        6. Mantén un tono profesional y técnico apropiado para un reporte de control de plagas
+        
+        Genera una descripción analítica de máximo 150 palabras sobre estos datos.
+
+    plagas_species:
+      title: "PREVENTIVOS - Especies de Plagas"
+      description: "Distribución de especies de plagas encontradas por mes"
+      template: |
+        Analiza la siguiente tabla de distribución de especies de plagas para la sede {sede}.
+        
+        CONTEXTO: {description}
+        
+        DATOS:
+        {table_data}
+        
+        INSTRUCCIONES:
+        1. Identifica las especies más frecuentes y problemáticas
+        2. Analiza variaciones estacionales en las poblaciones de plagas
+        3. Evalúa la efectividad de las medidas preventivas por especie
+        4. Destaca cualquier aparición nueva o inusual de especies
+        5. Proporciona recomendaciones específicas para el control de especies dominantes
+        
+        Genera un análisis detallado de máximo 150 palabras.
+
+    total_trend:
+      title: "PREVENTIVOS - Tendencia Total"
+      description: "Tendencia general de eliminación de plagas en servicios preventivos"
+      template: |
+        Analiza la tendencia de eliminación de plagas en servicios preventivos para {sede}.
+        
+        CONTEXTO: {description}
+        
+        DATOS:
+        {table_data}
+        
+        INSTRUCCIONES:
+        1. Evalúa la tendencia general de eliminación a lo largo del tiempo
+        2. Identifica meses con mayor/menor actividad de plagas
+        3. Relaciona los datos con posibles factores estacionales
+        4. Evalúa la efectividad del programa preventivo
+        5. Sugiere ajustes al cronograma si es necesario
+        
+        Proporciona un análisis de tendencias de máximo 150 palabras.
+
+  roedores:
+    station_status:
+      title: "ROEDORES - Estado de Estaciones"
+      description: "Estado y actividad de las estaciones portacebos de control de roedores"
+      template: |
+        Analiza el estado de las estaciones de control de roedores para {sede}.
+        
+        CONTEXTO: {description}
+        
+        DATOS:
+        {table_data}
+        
+        INSTRUCCIONES:
+        1. Evalúa la efectividad de las estaciones según el consumo de cebo
+        2. Identifica estaciones con mayor actividad de roedores
+        3. Analiza el estado de mantenimiento de las estaciones
+        4. Evalúa la cobertura y distribución del sistema de control
+        5. Recomienda acciones correctivas o preventivas
+        
+        Genera un análisis operativo de máximo 150 palabras.
+
+    elimination_trend:
+      title: "ROEDORES - Tendencia de Eliminación"
+      description: "Tendencia temporal del consumo de cebo y actividad de roedores"
+      template: |
+        Analiza la tendencia de control de roedores a lo largo del tiempo en {sede}.
+        
+        CONTEXTO: {description}
+        
+        DATOS:
+        {table_data}
+        
+        INSTRUCCIONES:
+        1. Evalúa la tendencia del consumo de cebo rodenticida
+        2. Identifica períodos de mayor/menor actividad de roedores
+        3. Analiza la efectividad del programa de control temporal
+        4. Relaciona los datos con factores ambientales o estructurales
+        5. Proporciona recomendaciones para optimizar el control
+        
+        Desarrolla un análisis de tendencias de máximo 150 palabras.
+
+  lamparas:
+    status_monthly:
+      title: "LÁMPARAS - Estado Mensual"
+      description: "Estado operativo mensual de las lámparas de control de insectos"
+      template: |
+        Analiza el estado operativo de las lámparas de control de insectos en {sede}.
+        
+        CONTEXTO: {description}
+        
+        DATOS:
+        {table_data}
+        
+        INSTRUCCIONES:
+        1. Evalúa el estado de funcionamiento de las lámparas
+        2. Identifica patrones en las fallas y deterioro
+        3. Analiza la eficiencia del programa de mantenimiento
+        4. Determina necesidades de reemplazo o reparación
+        5. Recomienda mejoras en el mantenimiento preventivo
+        
+        Proporciona un análisis operativo de máximo 150 palabras.
+
+    status_legend:
+      title: "LÁMPARAS - Estado Detallado"
+      description: "Estado detallado por ubicación de las lámparas de control"
+      template: |
+        Analiza el estado detallado por ubicación de las lámparas en {sede}.
+        
+        CONTEXTO: {description}
+        
+        DATOS:
+        {table_data}
+        
+        INSTRUCCIONES:
+        1. Identifica ubicaciones con problemas recurrentes
+        2. Evalúa la cobertura del sistema de control por área
+        3. Analiza patrones de fallas por ubicación específica
+        4. Determina prioridades de mantenimiento por zona
+        5. Sugiere redistribución o adición de equipos si es necesario
+        
+        Genera un análisis por ubicación de máximo 150 palabras.
+
+    captures_species:
+      title: "LÁMPARAS - Capturas por Especies"
+      description: "Distribución de capturas de insectos voladores por especie"
+      template: |
+        Analiza las capturas de insectos voladores por especie en {sede}.
+        
+        CONTEXTO: {description}
+        
+        DATOS:
+        {table_data}
+        
+        INSTRUCCIONES:
+        1. Identifica las especies más capturadas y problemáticas
+        2. Analiza variaciones estacionales en las poblaciones
+        3. Evalúa la efectividad de las lámparas por tipo de insecto
+        4. Identifica tendencias preocupantes o mejoras
+        5. Recomienda ajustes en la estrategia de control
+        
+        Desarrolla un análisis entomológico de máximo 150 palabras.
+
+    captures_trend:
+      title: "LÁMPARAS - Tendencia de Capturas"
+      description: "Tendencia temporal del total de capturas de insectos voladores"
+      template: |
+        Analiza la tendencia de capturas totales de insectos voladores en {sede}.
+        
+        CONTEXTO: {description}
+        
+        DATOS:
+        {table_data}
+        
+        INSTRUCCIONES:
+        1. Evalúa la tendencia general de capturas a lo largo del tiempo
+        2. Identifica períodos de mayor actividad de insectos
+        3. Relaciona los datos con factores estacionales y ambientales
+        4. Evalúa la efectividad general del sistema de control
+        5. Proporciona recomendaciones para optimizar las capturas
+        
+        Proporciona un análisis de tendencias de máximo 150 palabras.
+
+# Prompts para resúmenes de sección
+section_prompts:
+  preventivos:
+    title: "RESUMEN EJECUTIVO - Servicios Preventivos"
+    template: |
+      Genera un resumen ejecutivo para la sección "Servicios Preventivos" del reporte de {sede}.
+      
+      DATOS DE LA SECCIÓN:
+      {section_data}
+      
+      INSTRUCCIONES:
+      1. Proporciona un resumen ejecutivo que integre los hallazgos de todas las tablas de esta sección
+      2. Identifica los aspectos más relevantes del rendimiento en servicios preventivos
+      3. Menciona tendencias generales y patrones importantes en la prevención
+      4. Destaca cualquier área que requiera atención especial o mejoras
+      5. Evalúa la efectividad general de las medidas preventivas implementadas
+      6. Mantén un enfoque profesional y orientado a la toma de decisiones
+      
+      Genera un resumen ejecutivo de máximo 200 palabras.
+
+  roedores:
+    title: "RESUMEN EJECUTIVO - Control de Roedores"
+    template: |
+      Genera un resumen ejecutivo para la sección "Control de Roedores" del reporte de {sede}.
+      
+      DATOS DE LA SECCIÓN:
+      {section_data}
+      
+      INSTRUCCIONES:
+      1. Evalúa la efectividad general del sistema de control de roedores
+      2. Analiza el estado operativo de las estaciones portacebos
+      3. Identifica tendencias en la actividad de roedores y consumo de cebo
+      4. Destaca logros importantes y áreas de mejora
+      5. Proporciona recomendaciones estratégicas para el control de roedores
+      6. Considera aspectos de salud pública y seguridad alimentaria
+      
+      Desarrolla un resumen ejecutivo de máximo 200 palabras.
+
+  lamparas:
+    title: "RESUMEN EJECUTIVO - Control de Insectos Voladores"
+    template: |
+      Genera un resumen ejecutivo para la sección "Control de Insectos Voladores" del reporte de {sede}.
+      
+      DATOS DE LA SECCIÓN:
+      {section_data}
+      
+      INSTRUCCIONES:
+      1. Evalúa la efectividad del sistema de lámparas para control de insectos
+      2. Analiza el estado operativo y mantenimiento de los equipos
+      3. Identifica patrones en las capturas y especies predominantes
+      4. Destaca la eficiencia del programa y áreas de oportunidad
+      5. Proporciona recomendaciones para optimizar el control de insectos voladores
+      6. Considera implicaciones para la calidad del ambiente hospitalario
+      
+      Proporciona un resumen ejecutivo de máximo 200 palabras.
+
+# Prompt para resumen general
+general_prompt:
+  title: "RESUMEN EJECUTIVO INTEGRAL"
+  template: |
+    Genera un resumen ejecutivo integral del reporte mensual de control de plagas para {sede}.
+    
+    DATOS CONSOLIDADOS DEL REPORTE:
+    {all_data}
+    
+    INSTRUCCIONES:
+    1. Proporciona una evaluación integral del estado del programa de control de plagas
+    2. Identifica las tendencias más significativas across todas las áreas de control
+    3. Evalúa la efectividad general de las medidas preventivas y correctivas implementadas
+    4. Destaca los logros principales y las áreas que requieren mejora prioritaria
+    5. Proporciona recomendaciones estratégicas para el próximo período
+    6. Incluye una evaluación del riesgo general de plagas en la instalación
+    7. Considera el cumplimiento de estándares de salud pública y hospitalarios
+    8. Mantén un enfoque ejecutivo apropiado para la dirección de la institución
+    
+    ESTRUCTURA SUGERIDA:
+    - Estado general del programa
+    - Logros destacados del período
+    - Áreas de atención prioritaria
+    - Recomendaciones estratégicas
+    - Perspectivas para el próximo período
+    
+    Genera un resumen ejecutivo integral de máximo 300 palabras que sirva como conclusión del reporte.
