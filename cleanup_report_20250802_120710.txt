@@ -1,0 +1,46 @@
+============================================================
+REPORTE DE LIMPIEZA DEL SISTEMA SERVIPLAGAS
+============================================================
+Fecha: 2025-08-02 12:07:10
+
+RESUMEN:
+  📁 Archivos eliminados: 22
+  📂 Directorios eliminados: 6
+  ❌ Errores: 0
+  💾 Espacio liberado: 215.6 KB
+
+📦 Backup creado en: backup_before_cleanup_20250802_120710
+
+ARCHIVOS ELIMINADOS:
+  🗑️  test_llm_integration.py
+  🗑️  ejemplo_uso_prompts.py
+  🗑️  verify_prompts.py
+  🗑️  eval_script.py
+  🗑️  demo_new_features.py
+  🗑️  document_mode_config.py
+  🗑️  template_editor.py
+  🗑️  Notebook.ipynb
+  🗑️  config/prompt_templates.yaml.backup
+  🗑️  outputs/~$porte_serviplagas.docx
+  🗑️  __pycache__/system_cleaner.cpython-311.pyc
+  🗑️  visualisations/__pycache__/Roedores.cpython-311.pyc
+  🗑️  visualisations/__pycache__/Lamparas.cpython-311.pyc
+  🗑️  visualisations/__pycache__/Preventivos.cpython-311.pyc
+  🗑️  config/__pycache__/settings.cpython-311.pyc
+  🗑️  config/__pycache__/__init__.cpython-311.pyc
+  🗑️  data_processing/__pycache__/data_loader.cpython-311.pyc
+  🗑️  data_processing/__pycache__/data_cleaner.cpython-311.pyc
+  🗑️  llm_integration/__pycache__/prompt_generator.cpython-311.pyc
+  🗑️  llm_integration/__pycache__/__init__.cpython-311.pyc
+  🗑️  reports/__pycache__/hospital_san_vicente_generator.cpython-311.pyc
+  🗑️  reports/__pycache__/report_builder.cpython-311.pyc
+
+ARCHIVOS PRINCIPALES MANTENIDOS:
+  📄 main.py - Punto de entrada principal
+  📄 reports/hospital_san_vicente_generator.py - Generador principal
+  📄 config/hospital_san_vicente_template.yaml - Plantilla oficial
+  📄 config/settings.py - Configuración del sistema
+  📄 README.md - Documentación
+
+SISTEMA LISTO PARA PRODUCCIÓN ✅
+============================================================

@@ -1,0 +1,233 @@
+# PLANTILLA ESPECÍFICA HOSPITAL SAN VICENTE
+# Basada en GUIA_PRACTICA_ELABORACION_INFORMES_MENSUALES y PLANTILLA_BASE_INFORME_TECNICO
+# Variables dinámicas identificadas y constantes fijas según documentación oficial
+
+# ==================================================================================
+# CONFIGURACIÓN DEL DOCUMENTO PRINCIPAL
+# ==================================================================================
+document_config:
+  codigo_formato: "F-PMYV-04"  # FIJO
+  tipo_documento: "INFORME TÉCNICO FINAL"  # FIJO 
+  version: "06"  # FIJO
+  fecha_formato: "20/06/2021"  # FIJO
+  sector: "SALUD (IPS PRIVADA) Prestación de Servicios de Salud Público Privados de Alta Complejidad"  # FIJO
+
+# ==================================================================================
+# DATOS POR SEDE (VARIABLES DINÁMICAS)
+# ==================================================================================
+sedes:
+  Rionegro:
+    nombre_completo: "Hospital San Vicente Fundación Rionegro"
+    codigo_sede: "Rionegro"
+    direccion: "Vereda La Convención, Vía Aeropuerto Llanogrande Km 23"
+    telefono: "4448717"
+    numero_bloques: 4
+    ordenes_tipicas: "33-46"  # Rango típico según guía
+    areas_controladas_tipicas: "60-62"
+    estaciones_roedores: "43-46"
+    numero_lamparas: 7
+    paginas_informe: 15
+    contenido_especifico:
+      - "Control Larvicida en Reservorio. PLAN DE CHOQUE"
+    recomendaciones_especificas:
+      - "Retirar material de compostaje procedente del buchón"
+      - "Reemplazar plantas (bromelias) por nativas repelentes"
+      - "Poner a recircular agua en fuentes o sembrar en espejos de agua"
+      - "Responsable: Jardinería"
+
+  Medellín:
+    nombre_completo: "Hospital San Vicente Fundación Medellín"
+    codigo_sede: "Medellín"
+    direccion: "Calle 64 # 51 D - 154 MEDELLÍN"
+    telefono: "4441333"
+    numero_bloques: 17
+    ordenes_tipicas: "98-99"  # Rango típico según guía
+    areas_controladas_tipicas: "~130"
+    estaciones_roedores: "100+"
+    numero_lamparas: "Variable"
+    paginas_informe: "19-21"
+    contenido_especifico:
+      - "Control Mensual al hospital Infantil. PLAN DE CHOQUE"
+      - "Informe Dengue"
+      - "Informe Nuevas Áreas"
+    recomendaciones_especificas:
+      - "Sellar madrigueras"
+      - "Instalar mecanismo físico espiral para control de palomas"
+      - "Aprobar mapa de puntos de control de lámparas"
+      - "Reubicar lámparas existentes"
+      - "Poda constante de zonas verdes"
+      - '"No alimentar a las palomas"'
+
+# ==================================================================================
+# PLANTILLAS DE TEXTO DINÁMICO
+# ==================================================================================
+plantillas_texto:
+  introduccion_ciclo:
+    template: >
+      Al llegar al {numero_mes_texto} mes del ciclo ({mes_nombre} {año}), el programa muestra una 
+      implementación sostenida y efectiva, con un control con grados de infestaciones 
+      bajo a medio de plagas en la mayoría de áreas del Hospital San Vicente {sede}.
+    variables:
+      - numero_mes_texto  # "séptimo", "octavo", "noveno", etc.
+      - mes_nombre        # "MARZO", "ABRIL", "MAYO", etc.
+      - año              # 2025
+      - sede             # "Rionegro", "Medellín"
+
+  metricas_principales:
+    template: >
+      Durante el período analizado se procesaron {ordenes_solicitadas} órdenes de mantenimiento preventivo,
+      realizándose efectivamente {ordenes_realizadas} órdenes con un porcentaje de cumplimiento del {porcentaje_cumplimiento}%.
+      Se controlaron {total_areas_controladas} áreas distribuidas en {numero_bloques} bloques asistenciales,
+      encontrándose evidencia de plagas en {areas_con_plagas} áreas.
+    variables:
+      - ordenes_solicitadas      # Dinámico del SAP
+      - ordenes_realizadas       # Usualmente igual a solicitadas
+      - porcentaje_cumplimiento  # 75%-83% según rendimiento
+      - total_areas_controladas  # Conteo real
+      - numero_bloques           # Fijo por sede
+      - areas_con_plagas         # Conteo real
+
+  analisis_sin_plagas:
+    template: |
+      En {mes_nombre} no se evidencian plagas en los controles preventivos.
+      CUCARACHAS: No se hallan cucarachas alemanas, tampoco americanas.
+      VOLADORES: Nuevamente no presencia de moscas y zancudos.
+      ROEDORES: No se evidencia actividad de roedores en las áreas monitoreadas.
+      HORMIGAS: No se registra presencia de hormigas en el período.
+    variables:
+      - mes_nombre  # Nombre del mes actual
+
+  tendencia_positiva:
+    template: >
+      La tendencia es a la baja, se mantiene en cero; la revisión de las estrategias 
+      de control de plagas debe seguir siendo una práctica regular para mantener 
+      estos excelentes resultados en {sede}.
+    variables:
+      - sede
+
+# ==================================================================================
+# GRADOS DE INFESTACIÓN (SEGÚN GUÍA PRÁCTICA)
+# ==================================================================================
+grados_infestacion:
+  bajo:
+    limite: 50
+    descripcion: "BAJO: ≤ 50 plagas totales"
+    color: "verde"
+  medio:
+    limite: 200
+    descripcion: "MEDIO: 51-200 plagas totales" 
+    color: "amarillo"
+  alto:
+    limite: 999999
+    descripcion: "ALTO: > 200 plagas totales"
+    color: "rojo"
+
+# ==================================================================================
+# RANGOS DE CUMPLIMIENTO TÍPICOS (SEGÚN GUÍA PRÁCTICA)
+# ==================================================================================
+porcentajes_cumplimiento:
+  75: "Mes con incidencias menores"
+  80: "Mes estándar"
+  83: "Mes con buen desempeño"
+  85: "Mes excepcional (poco común)"
+
+# ==================================================================================
+# ESTRUCTURA DE CONTENIDO POR SECCIÓN
+# ==================================================================================
+estructura_contenido:
+  comun:  # Aplicable a ambas sedes
+    - registro_control_insectos_rastreros
+    - registro_control_roedores
+    - registro_control_insectos_voladores  
+    - registro_ordenes_mantenimiento
+    - informe_zonas_comunes
+    - registro_fotografico
+    - recomendaciones
+
+  especifico_rionegro:
+    - control_larvicida_reservorio
+
+  especifico_medellin:
+    - control_mensual_hospital_infantil
+    - informe_dengue
+    - informe_nuevas_areas
+
+# ==================================================================================
+# FRASES Y PÁRRAFOS ESTÁNDAR (CONTENIDO FIJO)
+# ==================================================================================
+contenido_fijo:
+  descripcion_programa:
+    titulo: "DESCRIPCIÓN DEL PROGRAMA"
+    contenido: >
+      El control de plagas en el hospital, siendo este de alto nivel de complejidad, en donde confluyen 
+      gran cantidad de pacientes y visitantes, tiene como finalidad proteger la salud de los pacientes, 
+      trabajadores y visitantes, así como preservar la seguridad e integridad del entorno hospitalario.
+
+  nota_consolidados:
+    contenido: >
+      NOTA 1*: Se adjuntan a este informe, todos los formatos de consolidados, novedades por área de 
+      aplicación, recomendaciones de correctivos y mantenimientos y análisis por área controlada.
+
+  recomendaciones_generales:
+    titulo: "RECOMENDACIONES GENERALES"
+    lista:
+      - texto: "Sellar fisuras y grietas que permitan el anidamiento de plagas"
+        responsable: "Mantenimiento"
+      - texto: "Limpiar constantemente residuos y líquidos derramados"
+        responsable: "Mantenimiento y servicios generales"
+      - texto: "Eliminar empozamientos de aguas en cárcamos y sumideros"
+        responsable: "Mantenimiento y servicios generales"
+      - texto: "Colocar rejilla a sifones, cajas negras, manholes para evitar ingreso de plagas"
+        responsable: "Mantenimiento"
+      - texto: "Realizar mantenimiento a zonas comunes (zonas verdes)"
+        responsable: "Mantenimiento y servicios generales"
+      - texto: "Conservar productos aplicados en puntos estratégicos (no quitar o mojar)"
+        responsable: "Mantenimiento, servicios generales, residentes"
+      - texto: "Tener un manejo adecuado de residuos"
+        responsable: "Mantenimiento, clientes internos y externos, servicios generales"
+      - texto: "Realizar controles y monitoreos periódicos"
+        responsable: "Mantenimiento y SERVIPLAGAS S.A.S."
+      - texto: "Cuidado y protección de los puntos de control"
+        responsable: "Mantenimiento y servicios generales"
+
+# ==================================================================================
+# INFORMACIÓN DE CONTACTO (FIJO)
+# ==================================================================================
+contacto:
+  nombre: "FERNANDO QUINTERO"
+  cargo: "COORDINADOR DE MERCADEO"
+  telefono: "3225241"
+  celular: "311 622 60 19 - 310 469 50 50"
+  email: "splagasmedellin@gmail.com"
+
+# ==================================================================================
+# CONFIGURACIÓN DE FECHAS Y CICLOS
+# ==================================================================================
+configuracion_temporal:
+  meses_español:
+    1: "Enero"
+    2: "Febrero"
+    3: "Marzo"
+    4: "Abril"
+    5: "Mayo"
+    6: "Junio"
+    7: "Julio"
+    8: "Agosto"
+    9: "Septiembre"
+    10: "Octubre"
+    11: "Noviembre"
+    12: "Diciembre"
+
+  numeros_ordinales:
+    1: "primer"
+    2: "segundo"
+    3: "tercer"
+    4: "cuarto"
+    5: "quinto"
+    6: "sexto"
+    7: "séptimo"
+    8: "octavo"
+    9: "noveno"
+    10: "décimo"
+    11: "undécimo"
+    12: "duodécimo"
